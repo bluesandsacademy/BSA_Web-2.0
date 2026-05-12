@@ -39,4 +39,9 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+# internal dev files — never commit
 CLAUDE.md
+AGENTS.md
+*.blueprint.md
+bsa_bluepint.md
+docs.md
