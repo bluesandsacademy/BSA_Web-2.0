@@ -6,29 +6,29 @@
 
 /* ── Color tokens ─────────────────────────────────────────────────── */
 @theme {
-  --color-primary:   #0483e2;
+  --color-primary: #0483e2;
   --color-secondary: #02345a;
-  --color-accent:    #0aadff;
-  --color-pink:      #e63f8e;
-  --color-surface:   #f4f8fe;
-  --color-bdr:       #e2ebf6;
-  --color-muted:     #6b7e9e;
+  --color-accent: #0aadff;
+  --color-pink: #e63f8e;
+  --color-surface: #f4f8fe;
+  --color-bdr: #e2ebf6;
+  --color-muted: #6b7e9e;
 
   /* Tracking — generates tracking-display, tracking-heading, tracking-label */
   --tracking-display: -0.03em;
   --tracking-heading: -0.02em;
-  --tracking-label:    0.14em;
+  --tracking-label: 0.14em;
 
   /* Leading — generates leading-display, leading-heading, leading-snug */
   --leading-display: 1.06;
   --leading-heading: 1.15;
-  --leading-snug:    1.35;
+  --leading-snug: 1.35;
 }
 
 /* ── Font tokens ──────────────────────────────────────────────────── */
 @theme inline {
   --font-display: "Clash Display", system-ui, sans-serif;
-  --font-body:    "Satoshi", system-ui, sans-serif;
+  --font-body: "Satoshi", system-ui, sans-serif;
 }
 
 /* ── Base ─────────────────────────────────────────────────────────── */
@@ -48,7 +48,12 @@ body {
   overflow-x: hidden;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   font-family: var(--font-display);
   line-height: 1.15;
   letter-spacing: -0.02em;
@@ -82,32 +87,56 @@ h2 {
   font-weight: 600;
   border-radius: 4px;
 }
-.skip-link:focus { left: 1rem; }
+.skip-link:focus {
+  left: 1rem;
+}
 
 /* ── Slider animation keyframes ───────────────────────────────────── */
 @keyframes line-reveal {
-  from { transform: translateY(115%); }
-  to   { transform: translateY(0);    }
+  from {
+    transform: translateY(115%);
+  }
+  to {
+    transform: translateY(0);
+  }
 }
 
 @keyframes fade-up {
-  from { opacity: 0; transform: translateY(20px); }
-  to   { opacity: 1; transform: translateY(0);    }
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes progress-fill {
-  from { transform: scaleX(0); }
-  to   { transform: scaleX(1); }
+  from {
+    transform: scaleX(0);
+  }
+  to {
+    transform: scaleX(1);
+  }
 }
 
 @keyframes marquee {
-  from { transform: translateX(0); }
-  to   { transform: translateX(-50%); }
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
 }
 
 @keyframes fade-in {
-  from { opacity: 0; }
-  to   { opacity: 1; }
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
 /* ── Custom utilities ─────────────────────────────────────────────── */
@@ -140,4 +169,7 @@ h2 {
     letter-spacing: -0.03em;
     color: #02345a;
   }
+}
+data-09 {
+  background-color: #02345a;
 }
