@@ -1,40 +1,194 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 const navLinks = [
-  { label: "About", href: "/about" },
-  { label: "Focus Areas", href: "/focus-areas" },
-  { label: "Programs", href: "/programs" },
+  {
+    label: "About",
+    href: "/about",
+    children: [
+      { label: "Our Story", href: "/about/story" },
+      { label: "Our Team", href: "/about/team" },
+      { label: "Advisory Board", href: "/about/advisory-board" },
+    ],
+  },
+  {
+    label: "Focus Areas",
+    href: "/focus-areas",
+    children: [
+      { label: "STEM Training", href: "/focus-areas/stem-training" },
+      { label: "Tech Competitions", href: "/focus-areas/tech-competitions" },
+      { label: "Rural Women", href: "/focus-areas/rural-women" },
+      { label: "Disabilities", href: "/focus-areas/disabilities" },
+    ],
+  },
+  {
+    label: "Programs",
+    href: "/programs",
+    children: [
+      { label: "Tech Fingers", href: "/programs/tech-fingers" },
+      { label: "One Girl One Laptop", href: "/programs/one-girl-one-laptop" },
+      { label: "TechFingers Platform", href: "/programs/techfingers-platform" },
+    ],
+  },
   { label: "STEM Labs", href: "/stem-labs" },
-  { label: "Insights", href: "/insights" },
+  {
+    label: "Insights",
+    href: "/insights",
+    children: [
+      { label: "Blog", href: "/insights/blog" },
+      { label: "Newsletters", href: "/insights/newsletters" },
+      { label: "Case Studies", href: "/insights/case-studies" },
+      { label: "Careers", href: "/insights/careers" },
+    ],
+  },
   { label: "Volunteer", href: "/volunteer" },
 ];
 
+function DesktopDropdown({ link, pathname }) {
+  const [open, setOpen] = useState(false);
+  const ref = useRef(null);
+  const timerRef = useRef(null);
+
+  const active =
+    pathname === link.href || pathname.startsWith(link.href + "/");
+
+  const handleMouseEnter = () => {
+    clearTimeout(timerRef.current);
+    setOpen(true);
+  };
+
+  const handleMouseLeave = () => {
+    timerRef.current = setTimeout(() => setOpen(false), 120);
+  };
+
+  useEffect(() => () => clearTimeout(timerRef.current), []);
+
+  if (!link.children) {
+    return (
+      <li key={link.href}>
+        <Link
+          href={link.href}
+          aria-current={active ? "page" : undefined}
+          className={[
+            "relative font-body font-medium text-sm py-1 transition-colors",
+            active ? "text-primary" : "text-secondary/80 hover:text-primary",
+          ].join(" ")}
+        >
+          {link.label}
+          {active && (
+            <span
+              className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink rounded-full"
+              aria-hidden="true"
+            />
+          )}
+        </Link>
+      </li>
+    );
+  }
+
+  return (
+    <li
+      ref={ref}
+      className="relative"
+      onMouseEnter={handleMouseEnter}
+      onMouseLeave={handleMouseLeave}
+    >
+      <button
+        type="button"
+        aria-expanded={open}
+        aria-haspopup="true"
+        className={[
+          "relative flex items-center gap-1 font-body font-medium text-sm py-1 transition-colors cursor-pointer",
+          active ? "text-primary" : "text-secondary/80 hover:text-primary",
+        ].join(" ")}
+      >
+        {link.label}
+        <svg
+          className={[
+            "w-3.5 h-3.5 transition-transform duration-200",
+            open ? "rotate-180" : "",
+          ].join(" ")}
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="currentColor"
+          strokeWidth={2.5}
+          aria-hidden="true"
+        >
+          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+        </svg>
+        {active && (
+          <span
+            className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink rounded-full"
+            aria-hidden="true"
+          />
+        )}
+      </button>
+
+      {/* Dropdown panel */}
+      <div
+        className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50"
+        style={{
+          opacity: open ? 1 : 0,
+          transform: open
+            ? "translateX(-50%) translateY(0)"
+            : "translateX(-50%) translateY(-6px)",
+          pointerEvents: open ? "auto" : "none",
+          transition: "opacity 0.18s ease, transform 0.18s ease",
+        }}
+      >
+        <ul
+          className="min-w-[200px] bg-white border border-bdr rounded-xl shadow-lg overflow-hidden py-1.5"
+          role="menu"
+        >
+          {link.children.map((child) => {
+            const childActive = pathname === child.href;
+            return (
+              <li key={child.href} role="none">
+                <Link
+                  href={child.href}
+                  role="menuitem"
+                  aria-current={childActive ? "page" : undefined}
+                  className={[
+                    "flex items-center gap-2 px-4 py-2.5 font-body text-sm transition-colors group",
+                    childActive
+                      ? "text-primary bg-surface"
+                      : "text-secondary/80 hover:text-primary hover:bg-surface",
+                  ].join(" ")}
+                >
+                  <span
+                    className={[
+                      "w-1 h-1 rounded-full shrink-0 transition-colors",
+                      childActive ? "bg-pink" : "bg-secondary/20 group-hover:bg-pink",
+                    ].join(" ")}
+                    aria-hidden="true"
+                  />
+                  {child.label}
+                </Link>
+              </li>
+            );
+          })}
+        </ul>
+      </div>
+    </li>
+  );
+}
+
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [scrolled, setScrolled] = useState(false);
+  const [expandedMobile, setExpandedMobile] = useState(null);
   const pathname = usePathname();
-  const isHome = pathname === "/";
 
-  useEffect(() => {
-    const handleScroll = () => setScrolled(window.scrollY > 24);
-    handleScroll();
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, []);
-
-  useEffect(() => { setMenuOpen(false); }, [pathname]);
+  useEffect(() => { setMenuOpen(false); setExpandedMobile(null); }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  const transparent = isHome && !scrolled && !menuOpen;
-  const headerOnDark = transparent || menuOpen;
+  const headerOnDark = menuOpen;
 
   return (
     <>
@@ -44,8 +198,6 @@ export default function Navbar() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           menuOpen
             ? "bg-secondary"
-            : transparent
-            ? "bg-transparent"
             : "bg-white border-b border-bdr shadow-sm",
         ].join(" ")}
       >
@@ -78,33 +230,9 @@ export default function Navbar() {
 
           {/* Desktop links */}
           <ul className="hidden lg:flex items-center gap-8" role="list">
-            {navLinks.map(({ label, href }) => {
-              const active = pathname === href || pathname.startsWith(href + "/");
-              return (
-                <li key={href}>
-                  <Link
-                    href={href}
-                    aria-current={active ? "page" : undefined}
-                    className={[
-                      "relative font-body font-medium text-sm py-1 transition-colors",
-                      active
-                        ? "text-primary"
-                        : transparent
-                        ? "text-white/85 hover:text-white"
-                        : "text-secondary/80 hover:text-primary",
-                    ].join(" ")}
-                  >
-                    {label}
-                    {active && (
-                      <span
-                        className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink rounded-full"
-                        aria-hidden="true"
-                      />
-                    )}
-                  </Link>
-                </li>
-              );
-            })}
+            {navLinks.map((link) => (
+              <DesktopDropdown key={link.href} link={link} pathname={pathname} />
+            ))}
           </ul>
 
           {/* Desktop CTA + mobile hamburger */}
@@ -150,58 +278,129 @@ export default function Navbar() {
       <div
         id="mobile-menu"
         aria-hidden={!menuOpen}
-        className="fixed inset-0 z-40 bg-secondary lg:hidden flex flex-col"
+        className="fixed inset-0 z-40 bg-secondary lg:hidden flex flex-col overflow-y-auto"
         style={{
           transform: menuOpen ? "translateX(0)" : "translateX(100%)",
           transition: "transform 0.45s cubic-bezier(0.22,1,0.36,1)",
           visibility: menuOpen ? "visible" : "hidden",
         }}
       >
-        {/* Top spacer — clears the fixed navbar */}
+        {/* Top spacer */}
         <div className="h-16 shrink-0" />
 
-        {/* Nav links — vertically centered */}
-        <nav aria-label="Mobile navigation" className="flex-1 flex flex-col justify-center px-8">
+        {/* Nav links */}
+        <nav aria-label="Mobile navigation" className="flex-1 flex flex-col justify-center px-8 py-6">
           <ul role="list" className="flex flex-col">
-            {navLinks.map(({ label, href }, i) => {
+            {navLinks.map(({ label, href, children }, i) => {
               const active = pathname === href || pathname.startsWith(href + "/");
+              const isExpanded = expandedMobile === href;
+
               return (
-                <li key={href} className="relative pl-5">
-                  {/* Pink left accent bar — same design language as the hero slider */}
-                  <span
-                    className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 rounded-full transition-all duration-300"
-                    style={{
-                      height: "2rem",
-                      backgroundColor: active ? "#e63f8e" : "transparent",
-                    }}
-                    aria-hidden="true"
-                  />
-                  <Link
-                    href={href}
-                    aria-current={active ? "page" : undefined}
-                    onClick={() => setMenuOpen(false)}
-                    className="block py-3.5 font-display font-bold leading-none"
-                    style={{
-                      fontSize: "clamp(1.9rem, 7vw, 2.6rem)",
-                      letterSpacing: "-0.025em",
-                      color: active ? "#e63f8e" : "white",
-                      opacity: menuOpen ? 1 : 0,
-                      transform: menuOpen ? "translateX(0)" : "translateX(-12px)",
-                      transition: "opacity 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), color 0.2s ease",
-                      transitionDelay: menuOpen ? `${120 + i * 65}ms` : "0ms",
-                    }}
-                  >
-                    {label}
-                  </Link>
+                <li key={href} className="relative">
+                  <div className="relative pl-5 flex items-center">
+                    {/* Pink accent bar */}
+                    <span
+                      className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 rounded-full transition-all duration-300"
+                      style={{
+                        height: "2rem",
+                        backgroundColor: active ? "#e63f8e" : "transparent",
+                      }}
+                      aria-hidden="true"
+                    />
+
+                    {children ? (
+                      /* Accordion toggle for items with children */
+                      <button
+                        type="button"
+                        onClick={() => setExpandedMobile(isExpanded ? null : href)}
+                        aria-expanded={isExpanded}
+                        className="flex items-center gap-2 py-3.5 font-display font-bold leading-none w-full text-left cursor-pointer"
+                        style={{
+                          fontSize: "clamp(1.9rem, 7vw, 2.6rem)",
+                          letterSpacing: "-0.025em",
+                          color: active ? "#e63f8e" : "white",
+                          opacity: menuOpen ? 1 : 0,
+                          transform: menuOpen ? "translateX(0)" : "translateX(-12px)",
+                          transition: "opacity 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), color 0.2s ease",
+                          transitionDelay: menuOpen ? `${120 + i * 65}ms` : "0ms",
+                        }}
+                      >
+                        {label}
+                        <svg
+                          className={[
+                            "w-6 h-6 shrink-0 transition-transform duration-300",
+                            isExpanded ? "rotate-180" : "",
+                          ].join(" ")}
+                          fill="none"
+                          viewBox="0 0 24 24"
+                          stroke="currentColor"
+                          strokeWidth={2.5}
+                          aria-hidden="true"
+                        >
+                          <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
+                        </svg>
+                      </button>
+                    ) : (
+                      <Link
+                        href={href}
+                        aria-current={active ? "page" : undefined}
+                        onClick={() => setMenuOpen(false)}
+                        className="block py-3.5 font-display font-bold leading-none"
+                        style={{
+                          fontSize: "clamp(1.9rem, 7vw, 2.6rem)",
+                          letterSpacing: "-0.025em",
+                          color: active ? "#e63f8e" : "white",
+                          opacity: menuOpen ? 1 : 0,
+                          transform: menuOpen ? "translateX(0)" : "translateX(-12px)",
+                          transition: "opacity 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), color 0.2s ease",
+                          transitionDelay: menuOpen ? `${120 + i * 65}ms` : "0ms",
+                        }}
+                      >
+                        {label}
+                      </Link>
+                    )}
+                  </div>
+
+                  {/* Accordion children */}
+                  {children && (
+                    <div
+                      className="overflow-hidden transition-all duration-300 ease-out pl-5"
+                      style={{
+                        maxHeight: isExpanded ? `${children.length * 48}px` : "0px",
+                        opacity: isExpanded ? 1 : 0,
+                      }}
+                    >
+                      <ul className="pb-2 flex flex-col gap-0.5 border-l border-white/10 pl-4 ml-1">
+                        {children.map((child) => {
+                          const childActive = pathname === child.href;
+                          return (
+                            <li key={child.href}>
+                              <Link
+                                href={child.href}
+                                onClick={() => setMenuOpen(false)}
+                                aria-current={childActive ? "page" : undefined}
+                                className="block py-2 font-body font-semibold text-base transition-colors"
+                                style={{
+                                  color: childActive ? "#e63f8e" : "rgba(255,255,255,0.65)",
+                                }}
+                              >
+                                {child.label}
+                              </Link>
+                            </li>
+                          );
+                        })}
+                      </ul>
+                    </div>
+                  )}
                 </li>
               );
             })}
           </ul>
         </nav>
 
-        {/* Bottom — CTA + small note */}
+        {/* Bottom — CTA */}
         <div
-          className="px-8 pb-12"
+          className="px-8 pb-12 shrink-0"
           style={{
             opacity: menuOpen ? 1 : 0,
             transform: menuOpen ? "translateY(0)" : "translateY(12px)",
