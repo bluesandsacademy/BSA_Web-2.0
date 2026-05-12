@@ -21,13 +21,13 @@ export default function EmailCTA() {
   return (
     <section
       aria-labelledby="email-cta-heading"
-      className="relative py-28 overflow-hidden"
+      className="relative py-16 lg:py-28 overflow-hidden"
       style={{ backgroundColor: "#e63f8e" }}
     >
       {/* Ghost background word */}
       <span
         className="absolute right-0 top-1/2 -translate-y-1/2 font-display font-bold text-white select-none pointer-events-none leading-none"
-        style={{ fontSize: "clamp(14rem, 30vw, 28rem)", opacity: 0.06, lineHeight: 1 }}
+        style={{ fontSize: "clamp(10rem, 25vw, 28rem)", opacity: 0.06, lineHeight: 1 }}
         aria-hidden="true"
       >
         BSA

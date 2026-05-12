@@ -61,19 +61,19 @@ function InitiativeBlock({ item, delay }) {
       </span>
 
       <h3
-        className="font-display font-bold text-white mb-4 leading-snug"
+        className="font-display font-bold text-secondary mb-4 leading-snug"
         style={{ fontSize: "clamp(1.2rem, 1.8vw, 1.45rem)", letterSpacing: "-0.02em" }}
       >
         {item.title}
       </h3>
 
-      <p className="font-body text-white/65 leading-relaxed mb-8 flex-1">
+      <p className="font-body text-secondary/80 leading-relaxed mb-8 flex-1">
         {item.body}
       </p>
 
       <Link
         href={item.href}
-        className="inline-flex items-center gap-2 font-body font-bold text-sm text-white hover:text-pink transition-colors group self-start"
+        className="inline-flex items-center gap-2 font-body font-bold text-sm text-primary hover:text-pink transition-colors group self-start"
       >
         Learn More
         <svg
@@ -93,13 +93,12 @@ function InitiativeBlock({ item, delay }) {
 
 export default function OurInitiatives() {
   return (
-    <section aria-labelledby="initiatives-heading" className="py-28 bg-secondary">
+    <section aria-labelledby="initiatives-heading" className="py-16 lg:py-28 bg-surface">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         <h2
           id="initiatives-heading"
           className="section-title mb-20"
-          style={{ color: "white" }}
         >
           Our <span className="text-pink">Initiatives</span>
         </h2>

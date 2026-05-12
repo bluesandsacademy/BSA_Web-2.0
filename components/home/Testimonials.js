@@ -86,7 +86,7 @@ export default function Testimonials() {
   const next = () => setCurrent((i) => (i + 1) % total);
 
   return (
-    <section aria-labelledby="testimonials-heading" className="py-28 bg-surface overflow-hidden">
+    <section aria-labelledby="testimonials-heading" className="py-16 lg:py-28 bg-surface overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-20">
         <h2 id="testimonials-heading" className="section-title">
           Their words,{" "}
@@ -97,8 +97,8 @@ export default function Testimonials() {
       {/* Carousel */}
       <div className="relative max-w-3xl mx-auto">
 
-        {/* Card stack */}
-        <div className="relative" style={{ minHeight: "30rem" }}>
+        {/* Card stack — overflow-hidden on mobile prevents translateX bleed; lg:overflow-visible lets cards peek, clipped by the section boundary */}
+        <div className="relative overflow-hidden lg:overflow-visible" style={{ minHeight: "30rem" }}>
           {testimonials.map((t, i) => (
             <div
               key={i}

@@ -10,7 +10,7 @@ export default function AboutStrip() {
   return (
     <section
       aria-labelledby="about-strip-heading"
-      className="py-28 bg-white"
+      className="py-16 lg:py-28 bg-white"
     >
       <div className="max-w-7xl mx-auto px-6 lg:px-8 grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
 

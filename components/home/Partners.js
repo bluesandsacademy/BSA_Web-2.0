@@ -11,7 +11,7 @@ const track = [...partners, ...partners];
 
 export default function Partners() {
   return (
-    <section aria-labelledby="partners-heading" className="py-28 bg-white">
+    <section aria-labelledby="partners-heading" className="py-16 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16">
         <h2 id="partners-heading" className="section-title">
           Our <span className="text-pink">Partners</span>

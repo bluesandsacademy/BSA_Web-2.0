@@ -1,6 +1,7 @@
 import "./globals.css";
 import Navbar from "@/components/common/Navbar";
 import Footer from "@/components/common/Footer";
+import SmoothScroll from "@/components/common/SmoothScroll";
 
 export const metadata = {
   metadataBase: new URL("https://bluesandsacademy.org"),
@@ -107,6 +108,7 @@ export default function RootLayout({ children }) {
         />
       </head>
       <body className="min-h-screen flex flex-col bg-white text-secondary antialiased">
+        <SmoothScroll />
         <a href="#main-content" className="skip-link">
           Skip to main content
         </a>

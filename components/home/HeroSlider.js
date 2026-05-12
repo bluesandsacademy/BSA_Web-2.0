@@ -44,9 +44,9 @@ const SLIDES = [
 const INTERVAL = 7000;
 
 export default function HeroSlider() {
-  const [index, setIndex]   = useState(0);
-  const [rev, setRev]       = useState(0); // increments to re-trigger CSS animations
-  const intervalRef         = useRef(null);
+  const [index, setIndex] = useState(0);
+  const [rev, setRev] = useState(0); // increments to re-trigger CSS animations
+  const intervalRef = useRef(null);
 
   const startTimer = useCallback(() => {
     clearInterval(intervalRef.current);
@@ -73,7 +73,7 @@ export default function HeroSlider() {
     <section
       aria-label="Featured initiatives"
       aria-roledescription="carousel"
-      className="relative min-h-screen flex flex-col bg-secondary overflow-hidden"
+      className="relative min-h-[92vh] lg:min-h-screen flex flex-col bg-secondary overflow-hidden"
     >
       {/* ── Background: solid navy. Swap for per-slide <Image> later ── */}
       <div className="absolute inset-0 bg-secondary" aria-hidden="true" />
@@ -121,12 +121,11 @@ export default function HeroSlider() {
       />
 
       {/* ── Main content grid ── */}
-      <div className="relative z-10 flex-1 w-full max-w-7xl mx-auto px-8 lg:px-14 grid lg:grid-cols-[1fr_380px] xl:grid-cols-[1fr_430px] gap-10 items-center pt-28 pb-20 lg:pt-36 lg:pb-24">
-
+      <div className="relative z-10 flex-1 w-full max-w-7xl mx-auto px-6 lg:px-10 grid lg:grid-cols-[1fr_380px] xl:grid-cols-[1fr_430px] gap-10 items-center pt-32 pb-14 lg:pt-36 lg:pb-24">
         {/* Left: text ─────────────────────────────────────────── */}
         <div>
-          {/* Slide counter */}
-          <div className="flex items-center gap-4 mb-8 lg:mb-10">
+          {/* Slide counter — desktop only */}
+          <div className="hidden lg:flex items-center gap-4 mb-8 lg:mb-10">
             <span className="font-body font-bold text-[11px] text-pink tracking-[0.24em] uppercase tabular-nums">
               {slide.num}
             </span>
@@ -137,11 +136,7 @@ export default function HeroSlider() {
           </div>
 
           {/* Headline — each line is a cascade-reveal clip */}
-          <h1
-            className="mb-6 lg:mb-8"
-            aria-live="polite"
-            aria-atomic="true"
-          >
+          <h1 className="mb-6 lg:mb-8" aria-live="polite" aria-atomic="true">
             {slide.lines.map((line, i) => (
               <span
                 key={`${rev}-line-${i}`}
@@ -151,7 +146,7 @@ export default function HeroSlider() {
                 <span
                   className="block text-white font-display font-bold tracking-display animate-line-reveal"
                   style={{
-                    fontSize: "clamp(2.1rem, 5.2vw, 4rem)",
+                    fontSize: "clamp(2.5rem, 5.2vw, 4rem)",
                     animationDelay: `${i * 0.14}s`,
                   }}
                 >
@@ -176,18 +171,18 @@ export default function HeroSlider() {
           {/* CTAs */}
           <div
             key={`${rev}-ctas`}
-            className="flex flex-wrap gap-4 animate-fade-up"
+            className="flex flex-col items-start gap-3 sm:flex-row sm:flex-wrap sm:gap-4 animate-fade-up"
             style={{ animationDelay: "0.62s" }}
           >
             <Link
               href={slide.href}
-              className="inline-flex items-center justify-center px-6 py-4 rounded-full bg-pink text-white font-body font-bold text-sm transition-all hover:opacity-88 focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
+              className="inline-flex items-center justify-center min-w-36 lg:min-w-0 px-7 py-3 lg:px-12 lg:py-5 rounded-full bg-pink text-white font-body font-bold text-base transition-all hover:opacity-88 focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 focus-visible:ring-offset-secondary"
             >
               {slide.cta}
             </Link>
             <Link
               href="/programs"
-              className="inline-flex items-center gap-2 px-6 py-4 rounded-full border border-white/25 text-white font-body font-medium text-sm transition-all hover:border-white/55 hover:bg-white/5"
+              className="inline-flex items-center justify-center gap-2 px-11 py-3 lg:px-8 lg:py-3 rounded-full border border-white/25 text-white/80 font-body font-medium text-sm transition-all hover:border-white/55 hover:bg-white/5"
             >
               All Programs
               <svg
@@ -198,7 +193,11 @@ export default function HeroSlider() {
                 strokeWidth={2}
                 aria-hidden="true"
               >
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </Link>
           </div>
@@ -206,14 +205,12 @@ export default function HeroSlider() {
 
         {/* Right: photo placeholder ───────────────────────────── */}
         <div
-          className="hidden lg:flex relative flex-col justify-end rounded-2xl overflow-hidden border border-white/10 bg-white/[0.03]"
+          className="hidden lg:flex relative flex-col justify-end rounded-2xl overflow-hidden border border-white/10 bg-white/3"
           style={{ height: "clamp(360px, 42vh, 480px)" }}
           aria-hidden="true"
         >
           {/* Diagonal accent stripe */}
-          <div
-            className="absolute top-0 left-0 w-full h-1 bg-pink opacity-60"
-          />
+          <div className="absolute top-0 left-0 w-full h-1 bg-pink opacity-60" />
           <div className="p-6">
             <span className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-white/10 border border-white/12 mb-4">
               <span className="w-2 h-2 rounded-full bg-pink shrink-0" />
@@ -221,7 +218,7 @@ export default function HeroSlider() {
                 Photo placeholder
               </span>
             </span>
-            <p className="font-body text-xs text-white/22 leading-relaxed max-w-[200px]">
+            <p className="font-body text-xs text-white/22 leading-relaxed max-w-50">
               Replace with photography per slide before launch.
             </p>
           </div>
@@ -229,9 +226,9 @@ export default function HeroSlider() {
       </div>
 
       {/* ── Progress nav ─────────────────────────────────────────── */}
-      <div className="relative z-10 w-full max-w-7xl mx-auto px-8 lg:px-14 pb-10">
+      <div className="relative z-10 w-full max-w-7xl mx-auto px-6 lg:px-10 pb-10">
         <div
-          className="flex items-center gap-2"
+          className="hidden lg:flex items-center gap-2"
           role="tablist"
           aria-label="Slide navigation"
         >
@@ -242,7 +239,7 @@ export default function HeroSlider() {
               aria-selected={i === index}
               aria-label={`Go to slide ${i + 1}`}
               onClick={() => goTo(i)}
-              className="relative h-[3px] rounded-full overflow-hidden transition-[width] duration-300 ease-out focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-secondary"
+              className="relative h-0.75 rounded-full overflow-hidden transition-[width] duration-300 ease-out focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-white focus-visible:ring-offset-1 focus-visible:ring-offset-secondary"
               style={{ width: i === index ? 60 : 22 }}
             >
               {/* Track */}

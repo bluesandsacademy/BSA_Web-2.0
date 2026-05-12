@@ -163,7 +163,7 @@ function FeatureRow({ feature }) {
 
 export default function WhatWeDo() {
   return (
-    <section aria-labelledby="what-we-do-heading" className="py-28 bg-surface">
+    <section aria-labelledby="what-we-do-heading" className="py-16 lg:py-28 bg-surface overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         <h2 id="what-we-do-heading" className="section-title mb-20">

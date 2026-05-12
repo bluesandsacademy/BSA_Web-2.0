@@ -98,8 +98,8 @@ Transition statements and the milestone callout box adopted from Loom's scroll r
 | 2 | About Strip | `bg-white` | Heading left / content right, no image |
 | 3 | **Transition Statement** | `bg-white` | Centered bold bridge line. No heading, no content — one declarative sentence only |
 | 4 | What We Do | `bg-surface` | 4 alternating rows, converging scroll animation |
-| 5 | **Milestone Callout Box** | `bg-white` | Loom-style inset bordered card — Times Square feature + competition wins. Credibility anchor for funders |
-| 6 | Our Initiatives | `bg-secondary` (navy) | 3 numbered blocks (01/02/03), type-only, no cards |
+| 5 | **Milestone Callout Box** | `bg-secondary` (navy) | Full-bleed navy section — Times Square feature + competition wins. Credibility anchor for funders |
+| 6 | Our Initiatives | `bg-surface` | 3 numbered blocks (01/02/03), type-only, no cards. Dark text (text-secondary) on light bg. |
 | 7 | **Transition Statement** | `bg-secondary` (navy) | Centered bold line within the navy section, bridges Initiatives → Partners |
 | 8 | Partners | `bg-white` | Statement above logos: "Trusted by organisations across Nigeria" |
 | 9 | Testimonials | `bg-surface` | One large featured quote + 4 in 2-col grid below |
