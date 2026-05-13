@@ -52,8 +52,7 @@ function DesktopDropdown({ link, pathname }) {
   const ref = useRef(null);
   const timerRef = useRef(null);
 
-  const active =
-    pathname === link.href || pathname.startsWith(link.href + "/");
+  const active = pathname === link.href || pathname.startsWith(link.href + "/");
 
   const handleMouseEnter = () => {
     clearTimeout(timerRef.current);
@@ -68,7 +67,7 @@ function DesktopDropdown({ link, pathname }) {
 
   if (!link.children) {
     return (
-      <li key={link.href}>
+      <li>
         <Link
           href={link.href}
           aria-current={active ? "page" : undefined}
@@ -79,10 +78,7 @@ function DesktopDropdown({ link, pathname }) {
         >
           {link.label}
           {active && (
-            <span
-              className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink rounded-full"
-              aria-hidden="true"
-            />
+            <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink rounded-full" aria-hidden="true" />
           )}
         </Link>
       </li>
@@ -107,10 +103,7 @@ function DesktopDropdown({ link, pathname }) {
       >
         {link.label}
         <svg
-          className={[
-            "w-3.5 h-3.5 transition-transform duration-200",
-            open ? "rotate-180" : "",
-          ].join(" ")}
+          className={["w-3.5 h-3.5 transition-transform duration-200", open ? "rotate-180" : ""].join(" ")}
           fill="none"
           viewBox="0 0 24 24"
           stroke="currentColor"
@@ -120,29 +113,20 @@ function DesktopDropdown({ link, pathname }) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
         {active && (
-          <span
-            className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink rounded-full"
-            aria-hidden="true"
-          />
+          <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink rounded-full" aria-hidden="true" />
         )}
       </button>
 
-      {/* Dropdown panel */}
       <div
-        className="absolute top-full left-1/2 -translate-x-1/2 pt-3 z-50"
+        className="absolute top-full left-1/2 pt-3 z-50"
         style={{
           opacity: open ? 1 : 0,
-          transform: open
-            ? "translateX(-50%) translateY(0)"
-            : "translateX(-50%) translateY(-6px)",
+          transform: open ? "translateX(-50%) translateY(0)" : "translateX(-50%) translateY(-6px)",
           pointerEvents: open ? "auto" : "none",
           transition: "opacity 0.18s ease, transform 0.18s ease",
         }}
       >
-        <ul
-          className="min-w-[200px] bg-white border border-bdr rounded-xl shadow-lg overflow-hidden py-1.5"
-          role="menu"
-        >
+        <ul className="min-w-50 bg-white border border-bdr rounded-xl shadow-lg overflow-hidden py-1.5" role="menu">
           {link.children.map((child) => {
             const childActive = pathname === child.href;
             return (
@@ -179,16 +163,29 @@ function DesktopDropdown({ link, pathname }) {
 export default function Navbar() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [expandedMobile, setExpandedMobile] = useState(null);
+  const [scrolled, setScrolled] = useState(false);
   const pathname = usePathname();
+  const isHome = pathname === "/";
 
-  useEffect(() => { setMenuOpen(false); setExpandedMobile(null); }, [pathname]);
+  useEffect(() => {
+    setMenuOpen(false);
+    setExpandedMobile(null);
+  }, [pathname]);
 
   useEffect(() => {
     document.body.style.overflow = menuOpen ? "hidden" : "";
     return () => { document.body.style.overflow = ""; };
   }, [menuOpen]);
 
-  const headerOnDark = menuOpen;
+  useEffect(() => {
+    const onScroll = () => setScrolled(window.scrollY > 10);
+    onScroll();
+    window.addEventListener("scroll", onScroll, { passive: true });
+    return () => window.removeEventListener("scroll", onScroll);
+  }, []);
+
+  const transparent = isHome && !scrolled && !menuOpen;
+  const onDark = menuOpen;
 
   return (
     <>
@@ -198,20 +195,22 @@ export default function Navbar() {
           "fixed top-0 left-0 right-0 z-50 transition-all duration-300",
           menuOpen
             ? "bg-secondary"
+            : transparent
+            ? "bg-white/80 backdrop-blur-md"
             : "bg-white border-b border-bdr shadow-sm",
         ].join(" ")}
       >
         <nav
           aria-label="Main navigation"
-          className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between py-4 lg:py-6"
+          className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between py-4 lg:py-5"
         >
           {/* Logo */}
           <Link
             href="/"
             aria-label="Blue Sands Academy — Home"
             className={[
-              "flex items-center gap-2 font-display font-bold text-base tracking-heading transition-colors",
-              headerOnDark ? "text-white" : "text-secondary",
+              "flex items-center gap-2 font-display font-bold text-base transition-colors",
+              onDark ? "text-white" : "text-secondary",
             ].join(" ")}
           >
             <span
@@ -222,13 +221,11 @@ export default function Navbar() {
             </span>
             <span>
               Blue Sands{" "}
-              <span className={headerOnDark ? "text-accent" : "text-primary"}>
-                Academy
-              </span>
+              <span className={onDark ? "text-accent" : "text-primary"}>Academy</span>
             </span>
           </Link>
 
-          {/* Desktop links */}
+          {/* Desktop nav links */}
           <ul className="hidden lg:flex items-center gap-8" role="list">
             {navLinks.map((link) => (
               <DesktopDropdown key={link.href} link={link} pathname={pathname} />
@@ -252,17 +249,10 @@ export default function Navbar() {
               aria-label={menuOpen ? "Close navigation menu" : "Open navigation menu"}
               className={[
                 "lg:hidden p-2 rounded-md transition-colors",
-                headerOnDark ? "text-white hover:bg-white/10" : "text-secondary hover:bg-surface",
+                onDark ? "text-white hover:bg-white/10" : "text-secondary hover:bg-surface",
               ].join(" ")}
             >
-              <svg
-                className="w-6 h-6"
-                fill="none"
-                viewBox="0 0 24 24"
-                stroke="currentColor"
-                strokeWidth={2}
-                aria-hidden="true"
-              >
+              <svg className="w-6 h-6" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">
                 {menuOpen ? (
                   <path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" />
                 ) : (
@@ -274,7 +264,7 @@ export default function Navbar() {
         </nav>
       </header>
 
-      {/* ── Full-screen mobile overlay ── */}
+      {/* ── Mobile full-screen overlay ── */}
       <div
         id="mobile-menu"
         aria-hidden={!menuOpen}
@@ -285,10 +275,8 @@ export default function Navbar() {
           visibility: menuOpen ? "visible" : "hidden",
         }}
       >
-        {/* Top spacer */}
         <div className="h-16 shrink-0" />
 
-        {/* Nav links */}
         <nav aria-label="Mobile navigation" className="flex-1 flex flex-col justify-center px-8 py-6">
           <ul role="list" className="flex flex-col">
             {navLinks.map(({ label, href, children }, i) => {
@@ -298,18 +286,12 @@ export default function Navbar() {
               return (
                 <li key={href} className="relative">
                   <div className="relative pl-5 flex items-center">
-                    {/* Pink accent bar */}
                     <span
                       className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 rounded-full transition-all duration-300"
-                      style={{
-                        height: "2rem",
-                        backgroundColor: active ? "#e63f8e" : "transparent",
-                      }}
+                      style={{ height: "2rem", backgroundColor: active ? "#e63f8e" : "transparent" }}
                       aria-hidden="true"
                     />
-
                     {children ? (
-                      /* Accordion toggle for items with children */
                       <button
                         type="button"
                         onClick={() => setExpandedMobile(isExpanded ? null : href)}
@@ -327,15 +309,8 @@ export default function Navbar() {
                       >
                         {label}
                         <svg
-                          className={[
-                            "w-6 h-6 shrink-0 transition-transform duration-300",
-                            isExpanded ? "rotate-180" : "",
-                          ].join(" ")}
-                          fill="none"
-                          viewBox="0 0 24 24"
-                          stroke="currentColor"
-                          strokeWidth={2.5}
-                          aria-hidden="true"
+                          className={["w-6 h-6 shrink-0 transition-transform duration-300", isExpanded ? "rotate-180" : ""].join(" ")}
+                          fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true"
                         >
                           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
                         </svg>
@@ -361,7 +336,6 @@ export default function Navbar() {
                     )}
                   </div>
 
-                  {/* Accordion children */}
                   {children && (
                     <div
                       className="overflow-hidden transition-all duration-300 ease-out pl-5"
@@ -380,9 +354,7 @@ export default function Navbar() {
                                 onClick={() => setMenuOpen(false)}
                                 aria-current={childActive ? "page" : undefined}
                                 className="block py-2 font-body font-semibold text-base transition-colors"
-                                style={{
-                                  color: childActive ? "#e63f8e" : "rgba(255,255,255,0.65)",
-                                }}
+                                style={{ color: childActive ? "#e63f8e" : "rgba(255,255,255,0.65)" }}
                               >
                                 {child.label}
                               </Link>
@@ -398,7 +370,6 @@ export default function Navbar() {
           </ul>
         </nav>
 
-        {/* Bottom — CTA */}
         <div
           className="px-8 pb-12 shrink-0"
           style={{

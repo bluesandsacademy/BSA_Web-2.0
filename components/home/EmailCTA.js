@@ -20,6 +20,7 @@ export default function EmailCTA() {
 
   return (
     <section
+      id="s-subscribe"
       aria-labelledby="email-cta-heading"
       className="relative py-16 lg:py-28 overflow-hidden"
       style={{ backgroundColor: "#e63f8e" }}

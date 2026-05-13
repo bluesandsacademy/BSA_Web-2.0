@@ -3,10 +3,25 @@
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
 
-const achievementLines = [
-  "Featured on Times Square Towers, New York — global recognition for reaching business milestones.",
-  "Won the Mandela Washington Alumni Network's National Beyond School ICT Competition in 2019, defeating 150+ secondary schools across Nigeria.",
-  "Queen Amina College girls won the National Girls in ICT Competition in 2019, beating out 200+ secondary schools across Nigeria.",
+const achievements = [
+  {
+    display: "Times Square",
+    color: "white",
+    title: "Featured in New York City",
+    label: "Global recognition · Times Square Towers",
+  },
+  {
+    display: "150+",
+    color: "#E63F8E",
+    title: "Schools defeated across Nigeria",
+    label: "National Beyond School ICT · 2019",
+  },
+  {
+    display: "200+",
+    color: "#E63F8E",
+    title: "Schools beaten nationwide",
+    label: "National Girls in ICT Competition · 2019",
+  },
 ];
 
 export default function MilestoneCallout() {
@@ -21,38 +36,87 @@ export default function MilestoneCallout() {
           observer.disconnect();
         }
       },
-      { threshold: 0.2 }
+      { threshold: 0.15 }
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
   }, []);
 
   return (
-    <section aria-labelledby="milestone-heading" className="py-16 lg:py-28 bg-secondary">
-      <div
-        ref={ref}
-        className="max-w-7xl mx-auto px-6 lg:px-8 lg:grid lg:grid-cols-[5fr_6fr] lg:gap-20 lg:items-center"
-      >
-        {/* Left — headline + CTA */}
+    <section id="s-milestone" aria-labelledby="milestone-heading" className="py-28 bg-secondary">
+      <div ref={ref} className="max-w-7xl mx-auto px-6 lg:px-8">
+
+        {/* Heading */}
         <div
-          className="mb-12 lg:mb-0 transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+          className="mb-14"
           style={{
             opacity: visible ? 1 : 0,
-            transform: visible ? "translateY(0)" : "translateY(20px)",
-            transitionDelay: "0ms",
+            transform: visible ? "none" : "translateY(24px)",
+            transition: "opacity 700ms cubic-bezier(0.22,1,0.36,1), transform 700ms cubic-bezier(0.22,1,0.36,1)",
           }}
         >
-          <h2
-            id="milestone-heading"
-            className="section-title mb-6"
-            style={{ color: "white" }}
-          >
-            Our girls took it to the{" "}
-            <span className="text-pink">world stage.</span>
+          <h2 id="milestone-heading" className="section-title" style={{ color: "white" }}>
+            Recognition that{" "}
+            <span className="text-pink">speaks for itself.</span>
           </h2>
-          <p className="font-body text-white/70 leading-relaxed mb-10 max-w-sm">
-            From classrooms in Nigeria to Times Square, New York — and two national competition victories in the same year.
-          </p>
+        </div>
+
+        {/* Three equal achievement blocks */}
+        <div
+          className="grid grid-cols-1 md:grid-cols-3 gap-px rounded-2xl overflow-hidden border border-white/10"
+          style={{ backgroundColor: "rgba(255,255,255,0.10)" }}
+        >
+          {achievements.map((item, i) => (
+            <div
+              key={i}
+              className="bg-secondary p-8 lg:p-10 flex flex-col"
+              style={{
+                opacity: visible ? 1 : 0,
+                transform: visible ? "none" : "translateY(20px)",
+                transition: `opacity 700ms cubic-bezier(0.22,1,0.36,1) ${80 + i * 110}ms, transform 700ms cubic-bezier(0.22,1,0.36,1) ${80 + i * 110}ms`,
+              }}
+            >
+              <div className="w-full h-0.5 bg-pink mb-8" />
+
+              {/* Fixed-height zone keeps title/label aligned across all cards */}
+              <div className="flex items-end mb-6" style={{ minHeight: "7rem" }}>
+                <p
+                  className="font-display font-bold leading-none"
+                  style={{
+                    fontSize: "clamp(2.4rem, 4vw, 3.8rem)",
+                    letterSpacing: "-0.03em",
+                    color: item.color,
+                  }}
+                >
+                  {item.display}
+                </p>
+              </div>
+
+              <p
+                className="font-display font-bold text-white leading-snug mb-3 flex-1"
+                style={{ fontSize: "clamp(0.95rem, 1.3vw, 1.1rem)" }}
+              >
+                {item.title}
+              </p>
+
+              <p
+                className="font-body text-white/35 uppercase tracking-widest"
+                style={{ fontSize: "0.68rem" }}
+              >
+                {item.label}
+              </p>
+            </div>
+          ))}
+        </div>
+
+        {/* CTA */}
+        <div
+          className="mt-10"
+          style={{
+            opacity: visible ? 1 : 0,
+            transition: "opacity 700ms cubic-bezier(0.22,1,0.36,1) 450ms",
+          }}
+        >
           <Link
             href="/focus-areas/tech-competitions"
             className="inline-flex items-center gap-2 font-body font-bold text-sm text-white hover:text-pink transition-colors group"
@@ -71,24 +135,6 @@ export default function MilestoneCallout() {
           </Link>
         </div>
 
-        {/* Right — all achievement lines, stagger in */}
-        <div className="divide-y divide-white/10 mt-10 lg:mt-0">
-          {achievementLines.map((line, i) => (
-            <p
-              key={i}
-              className="font-display font-bold text-white py-7 first:pt-0 last:pb-0 leading-snug transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
-              style={{
-                fontSize: "clamp(1.05rem, 1.6vw, 1.25rem)",
-                letterSpacing: "-0.015em",
-                opacity: visible ? 1 : 0,
-                transform: visible ? "translateY(0)" : "translateY(16px)",
-                transitionDelay: `${100 + i * 120}ms`,
-              }}
-            >
-              {line}
-            </p>
-          ))}
-        </div>
       </div>
     </section>
   );

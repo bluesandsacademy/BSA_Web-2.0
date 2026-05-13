@@ -9,6 +9,7 @@ const facts = [
 export default function AboutStrip() {
   return (
     <section
+      id="s-about"
       aria-labelledby="about-strip-heading"
       className="py-16 lg:py-28 bg-secondary"
     >

@@ -86,7 +86,7 @@ export default function Testimonials() {
   const next = () => setCurrent((i) => (i + 1) % total);
 
   return (
-    <section aria-labelledby="testimonials-heading" className="py-16 lg:py-28 bg-surface overflow-hidden">
+    <section id="s-testimonials" aria-labelledby="testimonials-heading" className="py-16 lg:py-28 bg-surface overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-20">
         <h2 id="testimonials-heading" className="section-title">
           Their words,{" "}

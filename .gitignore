@@ -45,3 +45,4 @@ AGENTS.md
 *.blueprint.md
 bsa_bluepint.md
 docs.md
+.playwright-mcp/

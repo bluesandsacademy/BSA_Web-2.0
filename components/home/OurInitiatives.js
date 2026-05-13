@@ -93,7 +93,7 @@ function InitiativeBlock({ item, delay }) {
 
 export default function OurInitiatives() {
   return (
-    <section aria-labelledby="initiatives-heading" className="py-16 lg:py-28 bg-surface">
+    <section id="s-initiatives" aria-labelledby="initiatives-heading" className="py-16 lg:py-28 bg-surface">
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         <h2

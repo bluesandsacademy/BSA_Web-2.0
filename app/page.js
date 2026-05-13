@@ -8,10 +8,12 @@ import InitiativesTransition from "@/components/home/InitiativesTransition";
 import Partners from "@/components/home/Partners";
 import Testimonials from "@/components/home/Testimonials";
 import EmailCTA from "@/components/home/EmailCTA";
+import ScrollChapter from "@/components/home/ScrollChapter";
 
 export default function HomePage() {
   return (
     <>
+      <ScrollChapter />
       <HeroSlider />
       <AboutStrip />
       <TransitionStatement />
