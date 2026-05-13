@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 const features = [
   {
@@ -11,6 +12,7 @@ const features = [
     href: "/focus-areas/stem-training",
     imageLeft: true,
     imageCaption: "Digital skills training session",
+    image: "/what-we-do/row1.jpg",
   },
   {
     num: "02",
@@ -19,6 +21,7 @@ const features = [
     href: "/focus-areas/tech-competitions",
     imageLeft: false,
     imageCaption: "Tech competition event",
+    image: "/what-we-do/row2.jpg",
   },
   {
     num: "03",
@@ -27,6 +30,7 @@ const features = [
     href: "/focus-areas/rural-women",
     imageLeft: true,
     imageCaption: "Rural women empowerment programme",
+    image: "/what-we-do/row3.jpg",
   },
   {
     num: "04",
@@ -35,13 +39,14 @@ const features = [
     href: "/focus-areas/disabilities",
     imageLeft: false,
     imageCaption: "Skills training for persons with disabilities",
+    image: "/what-we-do/row4.jpg",
   },
 ];
 
 function FeatureRow({ feature }) {
   const rowRef = useRef(null);
   const [visible, setVisible] = useState(false);
-  const { num, title, body, href, imageLeft, imageCaption } = feature;
+  const { num, title, body, href, imageLeft, imageCaption, image } = feature;
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -73,6 +78,13 @@ function FeatureRow({ feature }) {
       style={{ transitionDelay: "0ms" }}
       aria-hidden="true"
     >
+      <Image
+        src={image}
+        alt={imageCaption}
+        fill
+        className="object-cover object-center"
+        sizes="(max-width: 1024px) 100vw, 55vw"
+      />
       <div className="absolute top-0 left-0 right-0 h-1.5 bg-pink z-10" />
       <div
         className="absolute bottom-0 left-0 right-0 z-10 p-5"

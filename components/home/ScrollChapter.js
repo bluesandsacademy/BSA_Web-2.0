@@ -80,29 +80,33 @@ export default function ScrollChapter() {
         const isActive = chapter.id === activeId;
         const isPast = i < activeIndex;
         const isHovered = hoveredId === chapter.id;
+        // Show label when: this dot is hovered, OR it's active and nothing else is hovered
+        const showLabel = isHovered || (isActive && !hoveredId);
 
         return (
           <div key={chapter.id} className="flex flex-col items-center">
-            {/* Dot row — 20×20 hit area keeps pointer alignment stable */}
+            {/* Dot row — 24×24 hit area */}
             <div
               className="relative flex items-center justify-center"
-              style={{ width: "20px", height: "20px" }}
+              style={{ width: "24px", height: "24px" }}
             >
-              {/* Tooltip — floats left of the dot */}
+              {/* Label — always visible for active dot, hover-only for others */}
               <div
                 aria-hidden="true"
                 style={{
                   position: "absolute",
-                  right: "calc(100% + 8px)",
+                  right: "calc(100% + 6px)",
                   top: "50%",
                   display: "flex",
                   alignItems: "center",
                   gap: "5px",
                   whiteSpace: "nowrap",
                   pointerEvents: "none",
-                  opacity: isHovered ? 1 : 0,
-                  transform: isHovered ? "translateY(-50%) translateX(0px)" : "translateY(-50%) translateX(5px)",
-                  transition: "opacity 0.16s ease, transform 0.16s ease",
+                  opacity: showLabel ? 1 : 0,
+                  transform: showLabel
+                    ? "translateY(-50%) translateX(0)"
+                    : "translateY(-50%) translateX(6px)",
+                  transition: "opacity 0.18s ease, transform 0.18s ease",
                 }}
               >
                 <span
@@ -110,25 +114,40 @@ export default function ScrollChapter() {
                   style={{
                     fontSize: "11px",
                     lineHeight: 1,
-                    backgroundColor: "#02345A",
-                    padding: "5px 10px",
+                    backgroundColor: isActive && !isHovered ? "#E63F8E" : "#02345A",
+                    padding: "5px 11px",
                     letterSpacing: "0.01em",
+                    transition: "background-color 0.2s ease",
                   }}
                 >
                   {chapter.label}
                 </span>
-                {/* Right-pointing arrow */}
                 <span
                   style={{
                     width: 0,
                     height: 0,
                     borderTop: "4px solid transparent",
                     borderBottom: "4px solid transparent",
-                    borderLeft: "5px solid #02345A",
+                    borderLeft: `5px solid ${isActive && !isHovered ? "#E63F8E" : "#02345A"}`,
                     flexShrink: 0,
+                    transition: "border-color 0.2s ease",
                   }}
                 />
               </div>
+
+              {/* Pulse ring — active dot only */}
+              {isActive && (
+                <span
+                  className="absolute rounded-full animate-ping"
+                  style={{
+                    width: "16px",
+                    height: "16px",
+                    backgroundColor: "rgba(230,63,142,0.22)",
+                    pointerEvents: "none",
+                  }}
+                  aria-hidden="true"
+                />
+              )}
 
               {/* Dot button */}
               <button
@@ -140,8 +159,8 @@ export default function ScrollChapter() {
                 aria-label={`Jump to ${chapter.label}`}
                 aria-current={isActive ? "true" : undefined}
                 style={{
-                  width: isActive ? "10px" : "7px",
-                  height: isActive ? "10px" : "7px",
+                  width: isActive ? "11px" : "7px",
+                  height: isActive ? "11px" : "7px",
                   borderRadius: "50%",
                   backgroundColor: isActive
                     ? "#E63F8E"
@@ -153,10 +172,13 @@ export default function ScrollChapter() {
                     : isPast
                     ? "1.5px solid rgba(230,63,142,0.45)"
                     : "1.5px solid #CBD5E1",
-                  transition: "all 0.3s cubic-bezier(0.22,1,0.36,1)",
+                  boxShadow: !isActive && isHovered ? "0 0 0 3px rgba(230,63,142,0.18)" : "none",
+                  transition: "all 0.25s cubic-bezier(0.22,1,0.36,1)",
                   cursor: "pointer",
                   outline: "none",
                   flexShrink: 0,
+                  position: "relative",
+                  zIndex: 1,
                 }}
               />
             </div>
