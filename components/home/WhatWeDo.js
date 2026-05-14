@@ -8,8 +8,8 @@ const features = [
   {
     num: "01",
     title: "Digital Skills Training",
-    body: "We build the foundation — from digital literacy to coding, UI/UX, and web development. For every woman, wherever she is in her journey.",
-    href: "/focus-areas/stem-training",
+    body: "We will assist you in comprehending the fundamentals of digital technology, the tools, the platforms, and the distinctions between digital and traditional technology if you are thinking about implementing digital technologies to improve your business or are interested in pursuing a career in any tech industry.",
+    href: "/services/stem-training",
     imageLeft: true,
     imageCaption: "Digital skills training session",
     image: "/what-we-do/row1.jpg",
@@ -17,28 +17,28 @@ const features = [
   {
     num: "02",
     title: "Tech Competition",
-    body: "We put girls on the national stage. Our competitions challenge them to build real tech solutions — and win against hundreds of schools.",
-    href: "/focus-areas/tech-competitions",
+    body: "Blue Sands Academy offers cutting-edge and appealing models that will allow girls to test their ability and refine their skills in order to pique interest in adopting ICT as the new norm in the twenty-first century through contests.",
+    href: "/services/ict-competition",
     imageLeft: false,
-    imageCaption: "Tech competition event",
+    imageCaption: "ICT competition event",
     image: "/what-we-do/row2.jpg",
   },
   {
     num: "03",
     title: "Economic Empowerment of Rural Women",
-    body: "Business education, funding, and real opportunity for rural women — so they can build independent livelihoods and lead their communities.",
-    href: "/focus-areas/rural-women",
+    body: "The basic economic, environmental, and social reforms necessary for sustainable development are essentially the responsibility of rural women. We provide business education, funding, and opportunity for rural women.",
+    href: "/programs/economic-empowerment",
     imageLeft: true,
     imageCaption: "Rural women empowerment programme",
     image: "/what-we-do/row3.jpg",
   },
   {
     num: "04",
-    title: "Skills Training for Persons with Disabilities",
-    body: "Subsidised technical and vocational training for women and girls with disabilities — giving them the tools and confidence to thrive on their own terms.",
-    href: "/focus-areas/disabilities",
+    title: "One Girl One Laptop Initiative",
+    body: "We donate a free laptop to any successful student in our physical training programme who cannot afford a computer for ongoing learning, done in collaboration with the government and corporate stakeholders.",
+    href: "/programs/one-girl-one-laptop",
     imageLeft: false,
-    imageCaption: "Skills training for persons with disabilities",
+    imageCaption: "One Girl One Laptop Initiative",
     image: "/what-we-do/row4.jpg",
   },
 ];
@@ -179,8 +179,7 @@ export default function WhatWeDo() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         <h2 id="what-we-do-heading" className="section-title mb-20">
-          What We Do
-          <br />for <span className="text-pink">Women</span>
+          Key <span className="text-pink">Focus Areas</span>
         </h2>
 
         <div className="flex flex-col gap-20 lg:gap-24">

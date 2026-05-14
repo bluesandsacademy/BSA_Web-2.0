@@ -13,9 +13,12 @@ export default function Partners() {
   return (
     <section id="s-partners" aria-labelledby="partners-heading" className="py-16 lg:py-28 bg-white">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-16">
-        <h2 id="partners-heading" className="section-title">
+        <h2 id="partners-heading" className="section-title mb-4">
           Our <span className="text-pink">Partners</span>
         </h2>
+        <p className="font-body text-muted" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)" }}>
+          Trusted by organisations working to close the digital gender gap.
+        </p>
       </div>
 
       {/* Full-width marquee — intentionally breaks out of the content rail */}

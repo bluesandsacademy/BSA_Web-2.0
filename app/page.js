@@ -1,13 +1,11 @@
 import HeroSlider from "@/components/home/HeroSlider";
 import AboutStrip from "@/components/home/AboutStrip";
-import TransitionStatement from "@/components/home/TransitionStatement";
 import WhatWeDo from "@/components/home/WhatWeDo";
-import MilestoneCallout from "@/components/home/MilestoneCallout";
-import OurInitiatives from "@/components/home/OurInitiatives";
-import InitiativesTransition from "@/components/home/InitiativesTransition";
+import STEMLabsHome from "@/components/home/STEMLabsHome";
 import Partners from "@/components/home/Partners";
 import Testimonials from "@/components/home/Testimonials";
-import EmailCTA from "@/components/home/EmailCTA";
+import TeamHome from "@/components/home/TeamHome";
+import BlogPreview from "@/components/home/BlogPreview";
 import ScrollChapter from "@/components/home/ScrollChapter";
 
 export default function HomePage() {
@@ -16,14 +14,12 @@ export default function HomePage() {
       <ScrollChapter />
       <HeroSlider />
       <AboutStrip />
-      <TransitionStatement />
       <WhatWeDo />
-      <MilestoneCallout />
-      <OurInitiatives />
-      <InitiativesTransition />
+      <STEMLabsHome />
       <Partners />
       <Testimonials />
-      <EmailCTA />
+      <TeamHome />
+      <BlogPreview />
     </>
   );
 }

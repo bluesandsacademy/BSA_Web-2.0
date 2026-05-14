@@ -6,34 +6,36 @@ import { usePathname } from "next/navigation";
 
 const navLinks = [
   {
-    label: "About",
+    label: "About Us",
     href: "/about",
     children: [
       { label: "Our Story", href: "/about/story" },
-      { label: "Our Team", href: "/about/team" },
+      { label: "Awards", href: "/about/awards" },
+      { label: "Management Team", href: "/about/team" },
       { label: "Advisory Board", href: "/about/advisory-board" },
     ],
   },
   {
-    label: "Focus Areas",
-    href: "/focus-areas",
+    label: "Services",
+    href: "/services",
     children: [
-      { label: "STEM Training", href: "/focus-areas/stem-training" },
-      { label: "Tech Competitions", href: "/focus-areas/tech-competitions" },
-      { label: "Rural Women", href: "/focus-areas/rural-women" },
-      { label: "Disabilities", href: "/focus-areas/disabilities" },
+      { label: "STEM Training", href: "/services/stem-training" },
+      { label: "ICT Competition", href: "/services/ict-competition" },
     ],
   },
   {
-    label: "Programs",
+    label: "Program",
     href: "/programs",
     children: [
       { label: "Tech Fingers", href: "/programs/tech-fingers" },
       { label: "One Girl One Laptop", href: "/programs/one-girl-one-laptop" },
-      { label: "TechFingers Platform", href: "/programs/techfingers-platform" },
+      { label: "STEM Club", href: "/programs/stem-club" },
+      { label: "Economic Empowerment", href: "/programs/economic-empowerment" },
     ],
   },
   { label: "STEM Labs", href: "/stem-labs" },
+  { label: "Creative Tech Hub", href: "/creative-tech-hub" },
+  { label: "Events", href: "/events" },
   {
     label: "Insights",
     href: "/insights",
@@ -44,7 +46,6 @@ const navLinks = [
       { label: "Careers", href: "/insights/careers" },
     ],
   },
-  { label: "Volunteer", href: "/volunteer" },
 ];
 
 function DesktopDropdown({ link, pathname }) {
@@ -73,7 +74,7 @@ function DesktopDropdown({ link, pathname }) {
           aria-current={active ? "page" : undefined}
           className={[
             "relative font-body font-medium text-sm py-1 transition-colors",
-            active ? "text-primary" : "text-secondary/80 hover:text-primary",
+            active ? "text-primary" : "text-secondary hover:text-primary",
           ].join(" ")}
         >
           {link.label}
@@ -98,7 +99,7 @@ function DesktopDropdown({ link, pathname }) {
         aria-haspopup="true"
         className={[
           "relative flex items-center gap-1 font-body font-medium text-sm py-1 transition-colors cursor-pointer",
-          active ? "text-primary" : "text-secondary/80 hover:text-primary",
+          active ? "text-primary" : "text-secondary hover:text-primary",
         ].join(" ")}
       >
         {link.label}
@@ -139,7 +140,7 @@ function DesktopDropdown({ link, pathname }) {
                     "flex items-center gap-2 px-4 py-2.5 font-body text-sm transition-colors group",
                     childActive
                       ? "text-primary bg-surface"
-                      : "text-secondary/80 hover:text-primary hover:bg-surface",
+                      : "text-secondary hover:text-primary hover:bg-surface",
                   ].join(" ")}
                 >
                   <span
@@ -207,7 +208,7 @@ export default function Navbar() {
           {/* Logo */}
           <Link
             href="/"
-            aria-label="Blue Sands Academy — Home"
+            aria-label="Blue Sands Academy, Home"
             className={[
               "flex items-center gap-2 font-display font-bold text-base transition-colors",
               onDark ? "text-white" : "text-secondary",
@@ -226,7 +227,7 @@ export default function Navbar() {
           </Link>
 
           {/* Desktop nav links */}
-          <ul className="hidden lg:flex items-center gap-8" role="list">
+          <ul className="hidden lg:flex items-center gap-5" role="list">
             {navLinks.map((link) => (
               <DesktopDropdown key={link.href} link={link} pathname={pathname} />
             ))}

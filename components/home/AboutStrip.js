@@ -1,9 +1,10 @@
 import Link from "next/link";
 
 const facts = [
-  { value: "2018", label: "Founded" },
+  { value: "2018", label: "Year founded" },
+  { value: "6+", label: "States reached" },
+  { value: "3", label: "Flagship programmes" },
   { value: "100%", label: "Women-focused" },
-  { value: "6+", label: "States across Nigeria" },
 ];
 
 export default function AboutStrip() {
@@ -21,31 +22,32 @@ export default function AboutStrip() {
           className="section-title"
           style={{ color: "white" }}
         >
-          Empowering Women
-          <br />and Girls
-          <br />through{" "}
-          <span className="text-pink">ICT Skills</span>
+          About{" "}
+          <span className="text-pink">Blue Sands</span>
+          <br />Academy
         </h2>
 
         {/* Right — body, facts, CTA */}
         <div>
           <div className="space-y-5 mb-10">
-            <p className="font-body text-white/70 leading-relaxed">
+            <p className="font-body text-white/85 leading-relaxed">
               Blue Sands Academy offers ICT courses to female students. We focus
               our efforts on assisting girls and women in developing technical
-              skills — from secondary school girls to female college students to
-              working professionals — to close the gender digital gap through ICT
-              training and other tech skills.
+              skills, from secondary school girls to female college students to
+              working professionals. We hope to close the gender digital gap by
+              providing women with ICT training and other tech skills.
             </p>
-            <p className="font-body text-white/70 leading-relaxed">
-              We believe that encouraging young girls' interest in digital
-              technology is critical. It is an excellent and necessary way to
-              improve the lives of girls and the communities they live in.
+            <p className="font-body text-white/85 leading-relaxed">
+              Blue Sands Academy, a training company, aims to close the gender
+              digital divide by providing women with ICT training and other IT
+              skills. We believe that encouraging young girls' interest in digital
+              technology is critical. Furthermore, we believe that this is an
+              excellent and necessary way to improve the lives of girls.
             </p>
           </div>
 
           {/* Facts */}
-          <dl className="grid grid-cols-3 gap-6 py-8 border-y border-white/10 mb-10">
+          <dl className="grid grid-cols-2 sm:grid-cols-4 gap-6 py-8 border-y border-white/10 mb-10">
             {facts.map(({ value, label }) => (
               <div key={label}>
                 <dt
@@ -54,7 +56,7 @@ export default function AboutStrip() {
                 >
                   {value}
                 </dt>
-                <dd className="font-body text-sm text-white/50">
+                <dd className="font-body text-sm text-white/70">
                   {label}
                 </dd>
               </div>
@@ -63,9 +65,9 @@ export default function AboutStrip() {
 
           <Link
             href="/about"
-            className="inline-flex items-center gap-2 font-body font-bold text-sm text-white/80 hover:text-pink transition-colors group"
+            className="inline-flex items-center gap-2 font-body font-bold text-sm text-white/90 hover:text-pink transition-colors group"
           >
-            Read Our Full Story
+            Learn More
             <svg
               className="w-4 h-4 transition-transform group-hover:translate-x-1"
               fill="none"

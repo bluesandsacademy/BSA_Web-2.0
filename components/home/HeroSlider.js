@@ -15,7 +15,7 @@ const SLIDES = [
       "We Invest In",
       { before: "", pink: "Women", after: " and Girls" },
     ],
-    body: "Technology that transforms lives and communities — one girl at a time.",
+    body: "So they can have the technological skills to turn their lives and communities around.",
     cta: "Partner With Us",
     href: "/contact",
     image: "/hero-slides/slide1.jpg",
@@ -23,13 +23,12 @@ const SLIDES = [
   {
     num: "02",
     lines: [
-      "Closing the",
-      "Gender Digital",
-      { before: "Gap ", pink: "Starts", after: " Here" },
+      "Closing the Gender",
+      { before: "Digital Gap ", pink: "Starts", after: " Here" },
     ],
-    body: "Every girl deserves the tools to shape her digital future.",
+    body: "Women and girls need to be given the tools they need to use technology.",
     cta: "See How",
-    href: "/focus-areas/stem-training",
+    href: "/services/stem-training",
     image: "/hero-slides/slide2.jpg",
   },
   {
@@ -38,19 +37,19 @@ const SLIDES = [
       { before: "Women With ", pink: "Disabilities", after: "" },
       "Are Our Priority",
     ],
-    body: "Technology has no boundaries — and neither do we.",
+    body: "Building skills through a journey of empowerment, confidence, and full potential.",
     cta: "Learn More",
-    href: "/focus-areas/disabilities",
+    href: "/programs/economic-empowerment",
     image: "/hero-slides/slide3.jpg",
   },
   {
     num: "04",
     lines: [
-      "Powering Girls",
-      { before: "To ", pink: "Excel", after: " in Their" },
-      "Chosen Field",
+      "Powering Girls and",
+      { before: "Women to ", pink: "Excel", after: "" },
+      "in Their Chosen Field",
     ],
-    body: "Because excellence has no gender.",
+    body: "Moving women and girls forward through technology.",
     cta: "See Our Impact",
     href: "/about",
     image: "/hero-slides/slide4.jpg",
@@ -61,9 +60,9 @@ const SLIDES = [
       "A Woman's Place",
       { before: "Is in the ", pink: "Revolution", after: "" },
     ],
-    body: "We're not waiting for change. We're building it.",
+    body: "Creating a generation of female leaders in technology.",
     cta: "Join the Movement",
-    href: "/volunteer",
+    href: "/about/story",
     image: "/hero-slides/slide5.jpg",
   },
 ];
@@ -279,7 +278,7 @@ export default function HeroSlider() {
             {/* Body — short, punchy, medium weight */}
             <p
               key={`${rev}-body`}
-              className="font-body font-medium text-secondary/75 animate-fade-up"
+              className="font-body font-medium text-secondary animate-fade-up"
               style={{
                 fontSize: "clamp(1rem, 1.35vw, 1.15rem)",
                 lineHeight: 1.55,
@@ -304,7 +303,7 @@ export default function HeroSlider() {
               </Link>
               <Link
                 href="/programs"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-secondary/20 text-secondary/60 font-body font-medium text-sm transition-all hover:border-secondary/40 hover:bg-surface"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full border border-secondary/20 text-muted font-body font-medium text-sm transition-all hover:border-secondary/40 hover:bg-surface"
               >
                 All Programs
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2} aria-hidden="true">

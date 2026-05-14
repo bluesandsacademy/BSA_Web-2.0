@@ -6,35 +6,35 @@ const testimonials = [
   {
     context: "National ICT Competition Champion",
     quote:
-      "Miss Alero and her team taught us how to build a mobile app to solve the problem of Maternal Mortality. We went for the competition and defeated over 150 secondary schools across Nigeria — and became the National Champions.",
+      "All through my secondary school, I have never had the opportunity to have a one-on-one mentorship, and also been encouraged to go into tech, not until Blue Sands Academy was preparing us for an ICT competition. I was fortunate to be selected by Miss Alero for her training team. She and her team taught us how to build a mobile App that will solve the problem of Maternal Mortality. After the training, we went for the competition and we defeated over 150 secondary schools across Nigeria and became the National Champions.",
     name: "Saphia Yakubu",
     role: "BSA Student",
   },
   {
     context: "Anchor College",
     quote:
-      "I was among the team that built Mamoth360 — an app to help solve maternal mortality. We were told the computer world is not only for boys, but also for girls.",
+      "I am a student of Anchor College, and I was fortunate to be trained by Blue Sands Academy. During this training, we were taught how to build mobile Apps, and I was among the team that built an App called Mamoth360 that will help solve the problem of maternal mortality. We were told that the computer world is not only for boys but also for girls. When I finish my secondary school education, I will like to study Computer Science at the university.",
     name: "Thelma Solomon",
     role: "Secondary School Student",
   },
   {
-    context: "BSA Skills Training",
+    context: "BSA Skills Training Graduate",
     quote:
-      "My community didn't like me because I have a disability — not until I came in contact with Blue Sands Academy. They organised a skills training session where I learnt how to bake. Now I am in a baking school as an intern.",
+      "Nobody has made me feel loved by others before, except my family members. I am a girl that has issues with my right leg. Nobody likes to be my friend. My community doesn't like me because I have a disability, but not until I came in contact with Blue Sands Academy. They organised a skills training session where I learnt how to bake, and now, I am in a baking school as an intern. I have made new friends because I make fantastic cakes that people like, and this made them like me, too.",
     name: "Salome Gabriel",
     role: "Skills Training Graduate",
   },
   {
     context: "BSA Graduate",
     quote:
-      "Blue Sands Academy gave me the opportunity to learn how to build mobile apps — something I would never have been able to do through my regular school curriculum.",
+      "Blue Sands Academy has greatly encouraged me to take up Computer Science as a course of study at university. They have given me the opportunity to learn how to build mobile Apps, something that I would not have been able to do with my regular school curriculum.",
     name: "Grace Dominic",
     role: "BSA Graduate",
   },
   {
     context: "BSA Graduate",
     quote:
-      "The best training I have ever had. The instructors are knowledgeable and professional. They gave us real-life experiences so we can use them when we start developing our own apps.",
+      "I would like to say the Blue Sands Academy is the best training I have ever had. The instructors are knowledgeable and professional. They gave us real-life experiences so that we can relate to and use them when we start developing our own apps.",
     name: "Lydia Idowu",
     role: "BSA Graduate",
   },
@@ -89,8 +89,8 @@ export default function Testimonials() {
     <section id="s-testimonials" aria-labelledby="testimonials-heading" className="py-16 lg:py-28 bg-surface overflow-hidden">
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-20">
         <h2 id="testimonials-heading" className="section-title">
-          Their words,{" "}
-          <span className="text-pink">not ours.</span>
+          Voices of{" "}
+          <span className="text-pink">Change</span>
         </h2>
       </div>
 

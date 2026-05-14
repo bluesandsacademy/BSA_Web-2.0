@@ -67,7 +67,7 @@ function InitiativeBlock({ item, delay }) {
         {item.title}
       </h3>
 
-      <p className="font-body text-secondary/80 leading-relaxed mb-8 flex-1">
+      <p className="font-body text-secondary leading-relaxed mb-8 flex-1">
         {item.body}
       </p>
 
