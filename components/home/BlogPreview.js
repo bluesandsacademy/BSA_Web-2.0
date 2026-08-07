@@ -7,7 +7,7 @@ const posts = [
   {
     tag: "Education",
     title: "Why Digital Literacy Is the Most Urgent Skill Gap in Nigeria Right Now",
-    excerpt: "With over 90% of jobs now requiring digital competency, the cost of leaving women and girls out of the digital economy is not just social. It is economic.",
+    excerpt: "With over 90% of jobs now requiring digital competency, the cost of leaving students, youth, and underserved communities out of the digital economy is not just social. It is economic.",
     date: "May 2025",
     href: "/insights/blog",
   },
@@ -20,7 +20,7 @@ const posts = [
   },
   {
     tag: "Impact",
-    title: "From Trainee to Tech Lead: How One Girl One Laptop Changed a Graduate's Career",
+    title: "From Trainee to Tech Lead: How One Student One Laptop Changed a Graduate's Career",
     excerpt: "Amara received her laptop in 2021. By 2023 she was leading the frontend team at a Lagos fintech startup. This is her account.",
     date: "Mar 2025",
     href: "/insights/blog",
@@ -101,7 +101,7 @@ export default function BlogPreview() {
               transition: "opacity 0.7s cubic-bezier(0.22,1,0.36,1), transform 0.7s cubic-bezier(0.22,1,0.36,1)",
             }}
           >
-            From the <span className="text-pink">Blog</span>
+            From the <span className="text-primary">Blog</span>
           </h2>
           <Link
             href="/insights/blog"
