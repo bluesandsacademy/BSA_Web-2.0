@@ -79,7 +79,7 @@ function DesktopDropdown({ link, pathname }) {
         >
           {link.label}
           {active && (
-            <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink rounded-full" aria-hidden="true" />
+            <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent rounded-full" aria-hidden="true" />
           )}
         </Link>
       </li>
@@ -114,7 +114,7 @@ function DesktopDropdown({ link, pathname }) {
           <path strokeLinecap="round" strokeLinejoin="round" d="M19 9l-7 7-7-7" />
         </svg>
         {active && (
-          <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-pink rounded-full" aria-hidden="true" />
+          <span className="absolute bottom-0 left-0 right-0 h-0.5 bg-accent rounded-full" aria-hidden="true" />
         )}
       </button>
 
@@ -146,7 +146,7 @@ function DesktopDropdown({ link, pathname }) {
                   <span
                     className={[
                       "w-1 h-1 rounded-full shrink-0 transition-colors",
-                      childActive ? "bg-pink" : "bg-secondary/20 group-hover:bg-pink",
+                      childActive ? "bg-accent" : "bg-secondary/20 group-hover:bg-pink",
                     ].join(" ")}
                     aria-hidden="true"
                   />
