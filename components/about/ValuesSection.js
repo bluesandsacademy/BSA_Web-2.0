@@ -6,12 +6,12 @@ const values = [
   {
     num: "01",
     title: "Inclusion First",
-    body: "We go where the gap is widest: rural communities, underserved schools, and women with disabilities. If the opportunity isn't there, we build it.",
+    body: "We go where the gap is widest: rural communities, underserved schools, and persons with disabilities. If the opportunity isn't there, we build it.",
   },
   {
     num: "02",
     title: "Skills, Not Sympathy",
-    body: "We build real technical capacity. The women we train compete on merit. Our graduates hold their own in any room.",
+    body: "We build real technical capacity. The students we train compete on merit. Our graduates hold their own in any room.",
   },
   {
     num: "03",
@@ -36,7 +36,7 @@ function ValueCard({ value, index }) {
   return (
     <div
       ref={ref}
-      className="relative pt-8 border-t-2 border-pink transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
+      className="relative pt-8 border-t-2 border-accent transition-[opacity,transform] duration-700 ease-[cubic-bezier(0.22,1,0.36,1)]"
       style={{
         opacity: visible ? 1 : 0,
         transform: visible ? "translateY(0)" : "translateY(28px)",
@@ -72,7 +72,7 @@ export default function ValuesSection() {
 
         <h2 id="values-heading" className="section-title mb-16 lg:mb-20">
           What We{" "}
-          <span className="text-pink">Stand For</span>
+          <span className="text-primary">Stand For</span>
         </h2>
 
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
