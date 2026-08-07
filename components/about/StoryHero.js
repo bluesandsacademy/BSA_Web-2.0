@@ -11,8 +11,8 @@ export default function StoryHero() {
       aria-label="Founder's Story"
       className="relative bg-secondary overflow-hidden"
     >
-      {/* Pink left bar */}
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-pink z-10" aria-hidden="true" />
+      {/* Accent left bar */}
+      <div className="absolute left-0 top-0 bottom-0 w-px bg-accent z-10" aria-hidden="true" />
 
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
         <div className="grid lg:grid-cols-[55%_45%] min-h-screen items-center gap-12 lg:gap-16 py-32 lg:py-0">
@@ -35,13 +35,13 @@ export default function StoryHero() {
             </h1>
 
             <p
-              className="font-body font-medium text-pink mb-10"
+              className="font-body font-medium text-accent mb-10"
               style={{ fontSize: "clamp(0.85rem, 1.2vw, 1rem)", letterSpacing: "0.01em" }}
             >
               {FOUNDER_ROLE}
             </p>
 
-            <div className="rounded-full bg-pink mb-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
+            <div className="rounded-full bg-accent mb-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
 
             <p
               className="font-body text-white/85 max-w-lg"
@@ -52,6 +52,15 @@ export default function StoryHero() {
               opportunity pass her by because no one had ever taught her how to
               reach for it. Then she decided the waiting was over.
             </p>
+
+            <p
+              className="font-body text-white/85 max-w-lg mt-6"
+              style={{ fontSize: "clamp(1rem, 1.4vw, 1.15rem)", lineHeight: 1.7 }}
+            >
+              What started as a mission for girls became a mission for anyone
+              the digital economy had left behind — students, youth, persons
+              with disabilities, and underserved communities across Nigeria.
+            </p>
           </div>
 
           {/* Right — photo or placeholder */}
@@ -60,8 +69,8 @@ export default function StoryHero() {
               className="relative w-full rounded-2xl overflow-hidden"
               style={{ aspectRatio: "3/4", border: "1px solid rgba(255,255,255,0.08)" }}
             >
-              {/* Top pink bar */}
-              <div className="absolute top-0 left-0 right-0 h-1 bg-pink z-10" />
+              {/* Top accent bar */}
+              <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-10" />
 
               {FOUNDER_PHOTO ? (
                 <Image
@@ -80,7 +89,7 @@ export default function StoryHero() {
                 >
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center font-display font-bold text-white"
-                    style={{ background: "rgba(230,63,142,0.2)", border: "1px solid rgba(230,63,142,0.3)", fontSize: "1.6rem" }}
+                    style={{ background: "rgba(0,119,255,0.2)", border: "1px solid rgba(0,119,255,0.3)", fontSize: "1.6rem" }}
                   >
                     AT
                   </div>
