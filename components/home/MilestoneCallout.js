@@ -12,13 +12,13 @@ const achievements = [
   },
   {
     display: "150+",
-    color: "#E63F8E",
+    color: "#0077FF",
     title: "Schools defeated across Nigeria",
     label: "National Beyond School ICT · 2019",
   },
   {
     display: "200+",
-    color: "#E63F8E",
+    color: "#0077FF",
     title: "Schools beaten nationwide",
     label: "National Girls in ICT Competition · 2019",
   },
@@ -57,7 +57,7 @@ export default function MilestoneCallout() {
         >
           <h2 id="milestone-heading" className="section-title" style={{ color: "white" }}>
             Recognition that{" "}
-            <span className="text-pink">speaks for itself.</span>
+            <span className="text-primary">speaks for itself.</span>
           </h2>
         </div>
 
@@ -76,7 +76,7 @@ export default function MilestoneCallout() {
                 transition: `opacity 700ms cubic-bezier(0.22,1,0.36,1) ${80 + i * 110}ms, transform 700ms cubic-bezier(0.22,1,0.36,1) ${80 + i * 110}ms`,
               }}
             >
-              <div className="w-full h-0.5 bg-pink mb-8" />
+              <div className="w-full h-0.5 bg-accent mb-8" />
 
               {/* Fixed-height zone keeps title/label aligned across all cards */}
               <div className="flex items-end mb-6" style={{ minHeight: "7rem" }}>

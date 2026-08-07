@@ -7,19 +7,19 @@ const initiatives = [
   {
     num: "01",
     title: "ICT Competitions",
-    body: "Our students have competed on the national stage — and won. In 2019, BSA girls defeated 150+ schools in the Mandela Washington Alumni Network competition and 200+ schools in the National Girls in ICT Competition.",
+    body: "Our students have competed on the national stage — and won. In 2019, BSA students defeated 150+ schools in the Mandela Washington Alumni Network competition and 200+ schools in the National Girls in ICT Competition.",
     href: "/focus-areas/tech-competitions",
   },
   {
     num: "02",
     title: "Tech Fingers",
-    body: "Our on-site and online secondary school training programme. We connect girls to tech skills — UI/UX, mobile app development, web development, and animation — and pair them with female mentors guiding them into careers in technology.",
+    body: "Our on-site and online secondary school training programme. We connect students to tech skills — UI/UX, mobile app development, web development, and animation — and pair them with experienced mentors guiding them into careers in technology.",
     href: "/programs/tech-fingers",
   },
   {
     num: "03",
-    title: "One Girl One Laptop",
-    body: "Every successful student in our physical training programme who cannot afford a computer receives a free laptop — removing the final barrier between a girl and her digital future.",
+    title: "One Student One Laptop",
+    body: "Every successful student in our physical training programme who cannot afford a computer receives a free laptop — removing the final barrier between a student and their digital future.",
     href: "/programs/one-girl-one-laptop",
   },
 ];
@@ -53,7 +53,7 @@ function InitiativeBlock({ item, delay }) {
       }}
     >
       <span
-        className="font-display font-bold text-pink mb-6 leading-none"
+        className="font-display font-bold text-accent mb-6 leading-none"
         style={{ fontSize: "clamp(2.4rem, 4vw, 3.2rem)", letterSpacing: "-0.03em" }}
         aria-hidden="true"
       >
@@ -100,7 +100,7 @@ export default function OurInitiatives() {
           id="initiatives-heading"
           className="section-title mb-20"
         >
-          Our <span className="text-pink">Initiatives</span>
+          Our <span className="text-primary">Initiatives</span>
         </h2>
 
         <div className="grid lg:grid-cols-3 gap-12 lg:gap-16">
