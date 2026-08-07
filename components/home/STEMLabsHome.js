@@ -6,7 +6,7 @@ import { useRef, useEffect, useState } from "react";
 const highlights = [
   { stat: "3", label: "Active STEM labs across Nigeria" },
   { stat: "6+", label: "States with BSA lab presence" },
-  { stat: "100%", label: "Female-focused learning environment" },
+  { stat: "100%", label: "Inclusive learning environment" },
 ];
 
 export default function STEMLabsHome() {
@@ -28,7 +28,7 @@ export default function STEMLabsHome() {
       aria-labelledby="stem-labs-heading"
       className="py-16 lg:py-28 bg-secondary relative overflow-hidden"
     >
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-pink" aria-hidden="true" />
+      <div className="absolute left-0 top-0 bottom-0 w-px bg-accent" aria-hidden="true" />
       <div
         className="absolute select-none pointer-events-none font-display font-bold text-white leading-none"
         style={{ fontSize: "clamp(14rem, 28vw, 24rem)", opacity: 0.025, right: "-2rem", bottom: "-3rem", lineHeight: 0.85 }}
@@ -49,16 +49,16 @@ export default function STEMLabsHome() {
             }}
           >
             <h2 id="stem-labs-heading" className="section-title mb-6" style={{ color: "white" }}>
-              Blue Sands <span className="text-pink">STEM Labs</span>
+              Blue Sands <span className="text-primary">STEM Labs</span>
             </h2>
-            <div className="rounded-full bg-pink mb-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
+            <div className="rounded-full bg-accent mb-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
             <p
               className="font-body text-white/85 leading-relaxed mb-6"
               style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}
             >
-              Our STEM Labs are purpose-built spaces where women and girls get hands-on
-              access to computers, design tools, and technical mentorship. Not virtual.
-              Not theoretical. Real equipment in real communities.
+              Our STEM Labs are purpose-built spaces where students and communities get
+              hands-on access to computers, design tools, and technical mentorship. Not
+              virtual. Not theoretical. Real equipment in real communities.
             </p>
             <p
               className="font-body text-white/85 leading-relaxed mb-10"
