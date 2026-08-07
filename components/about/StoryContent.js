@@ -46,7 +46,7 @@ function StoryImage({ src, alt, caption, aspect = "aspect-[4/3]" }) {
           </p>
         </div>
       )}
-      <div className="absolute top-0 left-0 right-0 h-1 bg-pink z-10" />
+      <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-10" />
       {caption && (
         <div className="absolute bottom-0 left-0 right-0 z-10 px-5 py-4"
           style={{ background: "linear-gradient(to top, rgba(1,36,63,0.75) 0%, transparent 100%)" }}>

@@ -5,7 +5,7 @@ import { useRef, useEffect, useState } from "react";
 const stats = [
   { value: "5,000+", label: "Students & communities trained", note: "across all programmes to date" },
   { value: "6",      label: "States reached",            note: "and growing across Nigeria" },
-  { value: "3",      label: "Flagship programmes",       note: "Tech Fingers · One Girl One Laptop · TechFingers Platform" },
+  { value: "3",      label: "Flagship programmes",       note: "Tech Fingers · One Student One Laptop · TechFingers Platform" },
   { value: "2018",   label: "Year founded",              note: "and still accelerating" },
 ];
 
