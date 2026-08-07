@@ -6,22 +6,22 @@ import SmoothScroll from "@/components/common/SmoothScroll";
 export const metadata = {
   metadataBase: new URL("https://bluesandsacademy.org"),
   title: {
-    default: "Blue Sands Academy — Closing the Gender Digital Gap",
+    default: "Blue Sands Academy — Closing the Digital Divide",
     template: "%s | Blue Sands Academy",
   },
   description:
-    "Blue Sands Academy empowers women and girls across Nigeria with ICT skills, STEM training, and tech entrepreneurship. Join us in closing the gender digital gap.",
+    "Blue Sands Academy equips students, youth, and underserved communities across Nigeria with ICT skills, STEM training, and tech entrepreneurship. Join us in closing the digital divide.",
   keywords: [
     "Blue Sands Academy",
     "BSA Nigeria",
-    "women in tech Nigeria",
-    "girls coding Nigeria",
-    "ICT training for women",
-    "STEM education girls Africa",
-    "gender digital divide",
+    "ICT skills Nigeria",
+    "youth coding Nigeria",
+    "ICT training Nigeria",
+    "STEM education Africa",
+    "digital skills gap",
     "digital empowerment Nigeria",
-    "tech skills women",
-    "tech entrepreneurship women Nigeria",
+    "tech skills training",
+    "tech entrepreneurship Nigeria",
   ],
   authors: [{ name: "Blue Sands Academy" }],
   creator: "Blue Sands Academy",
@@ -31,23 +31,23 @@ export const metadata = {
     locale: "en_NG",
     url: "https://bluesandsacademy.org",
     siteName: "Blue Sands Academy",
-    title: "Blue Sands Academy — Closing the Gender Digital Gap",
+    title: "Blue Sands Academy — Closing the Digital Divide",
     description:
-      "Empowering women and girls across Nigeria with ICT skills, STEM training, and tech entrepreneurship opportunities.",
+      "Equipping students, youth, and underserved communities across Nigeria with ICT skills, STEM training, and tech entrepreneurship opportunities.",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Blue Sands Academy — Empowering Women in Tech",
+        alt: "Blue Sands Academy — Closing the Digital Divide",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "Blue Sands Academy — Closing the Gender Digital Gap",
+    title: "Blue Sands Academy — Closing the Digital Divide",
     description:
-      "Empowering women and girls across Nigeria with ICT skills and STEM training.",
+      "Equipping students, youth, and underserved communities across Nigeria with ICT skills and STEM training.",
     images: ["/og-image.png"],
     creator: "@bluesandsacademy",
   },
@@ -74,7 +74,7 @@ const jsonLd = {
   alternateName: "BSA",
   url: "https://bluesandsacademy.org",
   description:
-    "Closing the gender digital gap by empowering women and girls with ICT skills and STEM training across Nigeria.",
+    "Closing the digital divide by equipping students, youth, and underserved communities with ICT skills and STEM training across Nigeria.",
   logo: { "@type": "ImageObject", url: "https://bluesandsacademy.org/logo.png" },
   contactPoint: {
     "@type": "ContactPoint",
@@ -85,10 +85,10 @@ const jsonLd = {
   knowsAbout: [
     "ICT Skills Training",
     "STEM Education",
-    "Women Empowerment",
+    "Youth Empowerment",
     "Digital Literacy",
     "Tech Entrepreneurship",
-    "Gender Digital Divide",
+    "Digital Divide",
   ],
   sameAs: [
     "https://twitter.com/bluesandsacademy",
