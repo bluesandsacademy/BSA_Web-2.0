@@ -17,7 +17,7 @@ const features = [
   {
     num: "02",
     title: "Tech Competition",
-    body: "Blue Sands Academy offers cutting-edge and appealing models that will allow girls to test their ability and refine their skills in order to pique interest in adopting ICT as the new norm in the twenty-first century through contests.",
+    body: "Blue Sands Academy offers cutting-edge and appealing models that will allow students to test their ability and refine their skills in order to pique interest in adopting ICT as the new norm in the twenty-first century through contests.",
     href: "/services/ict-competition",
     imageLeft: false,
     imageCaption: "ICT competition event",
@@ -25,20 +25,20 @@ const features = [
   },
   {
     num: "03",
-    title: "Economic Empowerment of Rural Women",
-    body: "The basic economic, environmental, and social reforms necessary for sustainable development are essentially the responsibility of rural women. We provide business education, funding, and opportunity for rural women.",
+    title: "Rural Economic Empowerment Programme",
+    body: "The basic economic, environmental, and social reforms necessary for sustainable development are essentially the responsibility of rural communities. We provide business education, funding, and opportunity for rural communities.",
     href: "/programs/economic-empowerment",
     imageLeft: true,
-    imageCaption: "Rural women empowerment programme",
+    imageCaption: "Rural communities empowerment programme",
     image: "/what-we-do/row3.jpg",
   },
   {
     num: "04",
-    title: "One Girl One Laptop Initiative",
+    title: "One Student One Laptop Initiative",
     body: "We donate a free laptop to any successful student in our physical training programme who cannot afford a computer for ongoing learning, done in collaboration with the government and corporate stakeholders.",
     href: "/programs/one-girl-one-laptop",
     imageLeft: false,
-    imageCaption: "One Girl One Laptop Initiative",
+    imageCaption: "One Student One Laptop Initiative",
     image: "/what-we-do/row4.jpg",
   },
 ];
@@ -85,7 +85,7 @@ function FeatureRow({ feature }) {
         className="object-cover object-center"
         sizes="(max-width: 1024px) 100vw, 55vw"
       />
-      <div className="absolute top-0 left-0 right-0 h-1.5 bg-pink z-10" />
+      <div className="absolute top-0 left-0 right-0 h-1.5 bg-accent z-10" />
       <div
         className="absolute bottom-0 left-0 right-0 z-10 p-5"
         style={{
@@ -179,7 +179,7 @@ export default function WhatWeDo() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         <h2 id="what-we-do-heading" className="section-title mb-20">
-          Key <span className="text-pink">Focus Areas</span>
+          Key <span className="text-primary">Focus Areas</span>
         </h2>
 
         <div className="flex flex-col gap-20 lg:gap-24">
