@@ -83,7 +83,7 @@ export default function BlogIndex() {
           </h1>
           <div className="rounded-full bg-pink mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
           <p className="font-body text-white/85 mt-6 max-w-xl" style={{ fontSize: "clamp(1rem, 1.4vw, 1.1rem)", lineHeight: 1.7 }}>
-            Stories, data, and perspectives on closing the gender digital gap in Africa.
+            Stories, data, and perspectives on closing the digital divide in Africa.
           </p>
         </div>
       </section>
