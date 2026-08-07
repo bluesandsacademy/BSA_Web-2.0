@@ -55,7 +55,7 @@ export default function ContactPage() {
     <>
       {/* Hero */}
       <section className="relative bg-secondary overflow-hidden py-28 lg:py-40">
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-pink z-10" aria-hidden="true" />
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-accent z-10" aria-hidden="true" />
         <div
           className="absolute select-none pointer-events-none font-display font-bold text-white leading-none"
           style={{ fontSize: "clamp(10rem, 20vw, 18rem)", opacity: 0.025, right: "-1rem", bottom: "-2rem", lineHeight: 0.85 }}
@@ -71,9 +71,9 @@ export default function ContactPage() {
             className="font-display font-bold text-white max-w-2xl"
             style={{ fontSize: "clamp(3rem, 6.5vw, 6rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}
           >
-            Partner <span className="text-pink">With Us</span>
+            Partner <span className="text-primary">With Us</span>
           </h1>
-          <div className="rounded-full bg-pink mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
+          <div className="rounded-full bg-accent mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
           <p className="font-body text-white/85 mt-6 max-w-xl" style={{ fontSize: "clamp(1rem, 1.4vw, 1.1rem)", lineHeight: 1.7 }}>
             Whether you are a government agency, corporate organisation, NGO, or
             individual investor, we would love to hear from you. Tell us how you
@@ -90,7 +90,7 @@ export default function ContactPage() {
             {/* Left — contact info */}
             <div>
               <h2 className="section-title mb-8">
-                Get in <span className="text-pink">Touch</span>
+                Get in <span className="text-primary">Touch</span>
               </h2>
               <p className="font-body text-secondary leading-relaxed mb-12" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
                 We are always open to conversations about partnerships,
@@ -116,7 +116,7 @@ export default function ContactPage() {
             {/* Right — form */}
             <div>
               {status === "success" ? (
-                <div className="border-t-2 border-pink pt-10">
+                <div className="border-t-2 border-accent pt-10">
                   <h3 className="font-display font-bold text-secondary mb-4" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", letterSpacing: "-0.02em" }}>
                     Message received.
                   </h3>
@@ -207,7 +207,7 @@ export default function ContactPage() {
                   <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-pink text-white font-body font-bold text-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 disabled:opacity-60"
+                    className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-primary text-white font-body font-bold text-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-60"
                   >
                     {status === "loading" ? (
                       <>

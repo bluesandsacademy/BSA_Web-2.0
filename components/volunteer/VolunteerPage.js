@@ -44,7 +44,7 @@ export default function VolunteerPage() {
     <>
       {/* Hero */}
       <section className="relative bg-secondary overflow-hidden py-28 lg:py-40">
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-pink z-10" aria-hidden="true" />
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-accent z-10" aria-hidden="true" />
         <div
           className="absolute select-none pointer-events-none font-display font-bold text-white leading-none"
           style={{ fontSize: "clamp(10rem, 20vw, 18rem)", opacity: 0.025, right: "-1rem", bottom: "-2rem", lineHeight: 0.85 }}
@@ -60,7 +60,7 @@ export default function VolunteerPage() {
             className="font-display font-bold text-white max-w-2xl"
             style={{ fontSize: "clamp(3rem, 6.5vw, 6rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}
           >
-            Give Your <span className="text-pink">Time</span>
+            Give Your <span className="text-primary">Time</span>
           </h1>
           <div className="rounded-full bg-accent mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
           <p className="font-body text-white/85 mt-6 max-w-xl" style={{ fontSize: "clamp(1rem, 1.4vw, 1.1rem)", lineHeight: 1.7 }}>
@@ -79,7 +79,7 @@ export default function VolunteerPage() {
             {/* Left */}
             <div>
               <h2 className="section-title mb-8">
-                Why <span className="text-pink">Volunteer</span>
+                Why <span className="text-primary">Volunteer</span>
               </h2>
               <p className="font-body text-secondary leading-relaxed mb-8" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
                 You may want to volunteer because:
@@ -91,7 +91,7 @@ export default function VolunteerPage() {
                     className="flex items-start gap-3 font-body text-secondary"
                     style={{ fontSize: "clamp(0.9rem, 1.1vw, 1rem)", lineHeight: 1.65 }}
                   >
-                    <span className="w-1.5 h-1.5 rounded-full bg-pink shrink-0 mt-2" aria-hidden="true" />
+                    <span className="w-1.5 h-1.5 rounded-full bg-accent shrink-0 mt-2" aria-hidden="true" />
                     {r}
                   </li>
                 ))}
@@ -101,7 +101,7 @@ export default function VolunteerPage() {
             {/* Right — form */}
             <div>
               {status === "success" ? (
-                <div className="border-t-2 border-pink pt-10">
+                <div className="border-t-2 border-accent pt-10">
                   <h3 className="font-display font-bold text-secondary mb-4" style={{ fontSize: "clamp(1.5rem, 2.5vw, 2rem)", letterSpacing: "-0.02em" }}>
                     Application received.
                   </h3>
@@ -156,7 +156,7 @@ export default function VolunteerPage() {
                   <button
                     type="submit"
                     disabled={status === "loading"}
-                    className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-pink text-white font-body font-bold text-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2 disabled:opacity-60"
+                    className="inline-flex items-center justify-center gap-3 px-8 py-3.5 rounded-full bg-primary text-white font-body font-bold text-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 disabled:opacity-60"
                   >
                     {status === "loading" ? (
                       <>
