@@ -28,7 +28,7 @@ const navLinks = [
     href: "/programs",
     children: [
       { label: "Tech Fingers", href: "/programs/tech-fingers" },
-      { label: "One Girl One Laptop", href: "/programs/one-girl-one-laptop" },
+      { label: "One Student One Laptop", href: "/programs/one-girl-one-laptop" },
       { label: "STEM Club", href: "/programs/stem-club" },
       { label: "Economic Empowerment", href: "/programs/economic-empowerment" },
     ],

@@ -14,7 +14,7 @@ const footerNav = [
     heading: "Programs",
     links: [
       { label: "Tech Fingers", href: "/programs/tech-fingers" },
-      { label: "One Girl, One Laptop", href: "/programs/one-girl-one-laptop" },
+      { label: "One Student One Laptop", href: "/programs/one-girl-one-laptop" },
       { label: "TechFingers Platform", href: "/programs/techfingers-platform" },
       { label: "STEM Labs", href: "/stem-labs" },
     ],
@@ -24,7 +24,7 @@ const footerNav = [
     links: [
       { label: "STEM Training", href: "/focus-areas/stem-training" },
       { label: "Tech Competitions", href: "/focus-areas/tech-competitions" },
-      { label: "Rural Women", href: "/focus-areas/rural-women" },
+      { label: "Rural Communities", href: "/focus-areas/rural-women" },
       { label: "Disabilities", href: "/focus-areas/disabilities" },
     ],
   },
@@ -103,8 +103,8 @@ export default function Footer() {
             </Link>
 
             <p className="font-body text-sm text-white/55 leading-relaxed mb-7 max-w-[17rem]">
-              Closing the gender digital gap — empowering women and girls
-              across Nigeria with ICT skills and STEM training.
+              Closing the digital divide — equipping students, youth, and
+              underserved communities across Nigeria with ICT skills and STEM training.
             </p>
 
             <nav aria-label="Social media links">
