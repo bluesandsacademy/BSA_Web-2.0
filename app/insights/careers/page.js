@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Careers | Blue Sands Academy",
-  description: "Career opportunities at Blue Sands Academy — join the team closing the gender digital gap.",
+  description: "Career opportunities at Blue Sands Academy — join the team closing the digital divide.",
 };
 
 export default function CareersPage() {

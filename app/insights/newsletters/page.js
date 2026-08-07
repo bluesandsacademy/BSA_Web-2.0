@@ -1,6 +1,6 @@
 export const metadata = {
   title: "Newsletters | Blue Sands Academy",
-  description: "BSA newsletters — updates on programmes, impact, and the gender digital gap.",
+  description: "BSA newsletters — updates on programmes, impact, and the digital divide.",
 };
 
 export default function NewslettersPage() {

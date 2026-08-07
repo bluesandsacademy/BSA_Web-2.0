@@ -2,6 +2,7 @@
 
 import { useRef, useEffect, useState } from "react";
 import Link from "next/link";
+import { AUDIENCE_DESCRIPTOR } from "@/lib/content";
 
 function FadeIn({ children, delay = 0, className = "" }) {
   const ref = useRef(null);
@@ -36,7 +37,7 @@ const labs = [
     num: "01",
     name: "Lagos STEM Lab",
     state: "Lagos State",
-    note: "Our flagship lab, training secondary school girls and female professionals in digital design, web, and app development.",
+    note: "Our flagship lab, training secondary school students and young professionals in digital design, web, and app development.",
   },
   {
     num: "02",
@@ -48,15 +49,15 @@ const labs = [
     num: "03",
     name: "Abuja STEM Lab",
     state: "FCT Abuja",
-    note: "Our most recently opened facility, focused on ICT training for secondary school girls in the federal capital.",
+    note: "Our most recently opened facility, focused on ICT training for secondary school students in the federal capital.",
   },
 ];
 
 const stats = [
   { value: "3", label: "Active STEM Labs" },
   { value: "6+", label: "States Reached" },
-  { value: "5,000+", label: "Women Trained" },
-  { value: "100%", label: "Female-Focused" },
+  { value: "5,000+", label: "Students Trained" },
+  { value: "100%", label: "Access-Focused" },
 ];
 
 export default function STEMLabsPage() {
@@ -82,10 +83,10 @@ export default function STEMLabsPage() {
           >
             Blue Sands <span className="text-pink">STEM Labs</span>
           </h1>
-          <div className="rounded-full bg-pink mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
+          <div className="rounded-full bg-accent mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
           <p className="font-body text-white/85 mt-6 max-w-xl" style={{ fontSize: "clamp(1rem, 1.4vw, 1.1rem)", lineHeight: 1.7 }}>
-            Dedicated spaces where women and girls get hands-on access to
-            computers, design tools, and technical mentorship.
+            Dedicated spaces where students, youth, and underserved communities
+            get hands-on access to computers, design tools, and technical mentorship.
           </p>
         </div>
       </section>
@@ -105,8 +106,8 @@ export default function STEMLabsPage() {
                 <p className="font-body text-secondary leading-relaxed" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
                   Our STEM Labs are purpose-built training spaces equipped with
                   computers, high-speed internet, and design tools. They are
-                  staffed by experienced female tech educators and open to
-                  secondary school girls, female undergraduates, and women
+                  staffed by experienced tech educators and open to
+                  {AUDIENCE_DESCRIPTOR}, plus adults
                   entering or re-entering the workforce.
                 </p>
               </FadeIn>

@@ -62,11 +62,11 @@ export default function VolunteerPage() {
           >
             Give Your <span className="text-pink">Time</span>
           </h1>
-          <div className="rounded-full bg-pink mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
+          <div className="rounded-full bg-accent mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
           <p className="font-body text-white/85 mt-6 max-w-xl" style={{ fontSize: "clamp(1rem, 1.4vw, 1.1rem)", lineHeight: 1.7 }}>
             Blue Sands Academy volunteering will provide you with a supportive
             environment in which to hone your skills and make a real difference
-            in the lives of women and girls across Nigeria.
+            in the lives of students, youth, and underserved communities across Nigeria.
           </p>
         </div>
       </section>
