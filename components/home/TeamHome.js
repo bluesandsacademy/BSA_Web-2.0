@@ -22,7 +22,7 @@ function MemberChip({ member, index, visible }) {
     >
       <div
         className="w-10 h-10 rounded-full shrink-0 flex items-center justify-center font-display font-bold text-white text-xs"
-        style={{ background: "rgba(230,63,142,0.15)", border: "1px solid rgba(230,63,142,0.25)" }}
+        style={{ background: "rgba(0,119,255,0.15)", border: "1px solid rgba(0,119,255,0.25)" }}
       >
         {member.initials}
       </div>
@@ -65,16 +65,16 @@ export default function TeamHome() {
             }}
           >
             <h2 id="team-home-heading" className="section-title mb-6">
-              The <span className="text-pink">Team</span>
+              The <span className="text-primary">Team</span>
             </h2>
-            <div className="rounded-full bg-pink mb-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
+            <div className="rounded-full bg-accent mb-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
             <p
               className="font-body text-secondary leading-relaxed mb-10"
               style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}
             >
               A focused team of educators, technologists, and community builders
-              who have committed their skills to one mission: closing the gender
-              digital gap in Nigeria.
+              who have committed their skills to one mission: closing the digital
+              divide in Nigeria.
             </p>
             <Link
               href="/about/team"
