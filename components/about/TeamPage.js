@@ -98,7 +98,7 @@ function TeamCard({ member, index }) {
     >
       {/* Photo */}
       <div className="relative w-full rounded-2xl overflow-hidden mb-5" style={{ aspectRatio: "3/4" }}>
-        <div className="absolute top-0 left-0 right-0 h-1 bg-pink z-10" />
+        <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-10" />
 
         {member.src ? (
           <Image
@@ -161,7 +161,7 @@ export default function TeamPage() {
     <>
       {/* Hero */}
       <section className="relative bg-secondary overflow-hidden py-28 lg:py-40">
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-pink z-10" aria-hidden="true" />
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-accent z-10" aria-hidden="true" />
         <div
           className="absolute select-none pointer-events-none font-display font-bold text-white leading-none"
           style={{ fontSize: "clamp(12rem, 24vw, 20rem)", opacity: 0.025, right: "-1rem", bottom: "-2rem", lineHeight: 0.85 }}
@@ -177,12 +177,12 @@ export default function TeamPage() {
             className="font-display font-bold text-white max-w-2xl"
             style={{ fontSize: "clamp(3rem, 6.5vw, 6rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}
           >
-            The People <span className="text-pink">Building</span> the Mission
+            The People <span className="text-primary">Building</span> the Mission
           </h1>
-          <div className="rounded-full bg-pink mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
+          <div className="rounded-full bg-accent mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
           <p className="font-body text-white/85 mt-6 max-w-lg" style={{ fontSize: "clamp(1rem, 1.4vw, 1.1rem)", lineHeight: 1.7 }}>
-            A focused team with a clear conviction: the gender digital gap in
-            Nigeria closes when women build the tools to close it themselves.
+            A focused team with a clear conviction: the digital skills gap in
+            Nigeria closes when communities build the tools to close it themselves.
           </p>
         </div>
       </section>
@@ -191,7 +191,7 @@ export default function TeamPage() {
       <section aria-labelledby="team-heading" className="py-16 lg:py-28 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 id="team-heading" className="section-title mb-16 lg:mb-20">
-            Core <span className="text-pink">Team</span>
+            Core <span className="text-primary">Team</span>
           </h2>
           <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-8 lg:gap-10">
             {TEAM.map((member, i) => (
@@ -204,9 +204,9 @@ export default function TeamPage() {
       {/* Join CTA */}
       <section className="py-16 lg:py-24 bg-surface">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="border-t-2 border-pink pt-10 max-w-2xl">
+          <div className="border-t-2 border-accent pt-10 max-w-2xl">
             <h2 className="section-title mb-5">
-              Want to <span className="text-pink">Join</span> the Team?
+              Want to <span className="text-primary">Join</span> the Team?
             </h2>
             <p className="font-body text-secondary leading-relaxed mb-8" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)" }}>
               We are always looking for educators, technologists, and community
@@ -214,7 +214,7 @@ export default function TeamPage() {
             </p>
             <Link
               href="/insights/careers"
-              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-pink text-white font-body font-bold text-sm transition-opacity hover:opacity-90"
+              className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-primary text-white font-body font-bold text-sm transition-opacity hover:opacity-90"
             >
               See Open Roles
               <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
