@@ -90,7 +90,7 @@ export default function Testimonials() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8 mb-20">
         <h2 id="testimonials-heading" className="section-title">
           Voices of{" "}
-          <span className="text-pink">Change</span>
+          <span className="text-primary">Change</span>
         </h2>
       </div>
 
@@ -110,7 +110,7 @@ export default function Testimonials() {
               aria-hidden={i !== current}
             >
               {/* Context label — like Loom's company logo */}
-              <p className="font-body font-bold text-pink text-xs uppercase tracking-[0.16em] mb-6">
+              <p className="font-body font-bold text-primary text-xs uppercase tracking-[0.16em] mb-6">
                 {t.context}
               </p>
 
@@ -166,7 +166,7 @@ export default function Testimonials() {
                 style={{
                   width: i === current ? "1.5rem" : "0.5rem",
                   height: "0.5rem",
-                  backgroundColor: i === current ? "#e63f8e" : "#e2ebf6",
+                  backgroundColor: i === current ? "#0044cc" : "#e2ebf6",
                 }}
               />
             ))}
