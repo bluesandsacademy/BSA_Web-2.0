@@ -45,7 +45,7 @@ export default function TechFingers() {
     <>
       {/* Hero */}
       <section className="relative bg-secondary overflow-hidden py-28 lg:py-40">
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-pink z-10" aria-hidden="true" />
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-accent z-10" aria-hidden="true" />
         <div
           className="absolute select-none pointer-events-none font-display font-bold text-white leading-none"
           style={{ fontSize: "clamp(10rem, 20vw, 18rem)", opacity: 0.025, right: "-1rem", bottom: "-2rem", lineHeight: 0.85 }}
@@ -61,9 +61,9 @@ export default function TechFingers() {
             className="font-display font-bold text-white max-w-2xl"
             style={{ fontSize: "clamp(3rem, 6.5vw, 6rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}
           >
-            Tech <span className="text-pink">Fingers</span>
+            Tech <span className="text-primary">Fingers</span>
           </h1>
-          <div className="rounded-full bg-pink mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
+          <div className="rounded-full bg-accent mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
           <p className="font-body text-white/85 mt-6 max-w-xl" style={{ fontSize: "clamp(1rem, 1.4vw, 1.1rem)", lineHeight: 1.7 }}>
             Our onsite and online secondary school training programme for
             Nigeria and the rest of the world.
@@ -79,20 +79,20 @@ export default function TechFingers() {
             <div className="space-y-6">
               <FadeIn>
                 <h2 id="tf-heading" className="section-title">
-                  Train From <span className="text-pink">Anywhere</span>
+                  Train From <span className="text-primary">Anywhere</span>
                 </h2>
               </FadeIn>
               <FadeIn delay={80}>
                 <p className="font-body text-secondary leading-relaxed" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
                   Tech Fingers is our onsite and online secondary school training
                   programme for Nigeria and the rest of the world. Onsite, we
-                  train girls in technology and connect them with female mentors
+                  train students in technology and connect them with experienced mentors
                   who will guide them through a career in technology.
                 </p>
               </FadeIn>
               <FadeIn delay={150}>
                 <p className="font-body text-secondary leading-relaxed" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
-                  Online, we train young girls in IT skills such as UI/UX Design,
+                  Online, we train young people in IT skills such as UI/UX Design,
                   Mobile App Development, Photography and Videography, Web
                   Development, and Animation from anywhere in the world.
                 </p>
@@ -101,7 +101,7 @@ export default function TechFingers() {
                 <p className="font-body text-secondary leading-relaxed" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
                   The programme provides students with a technical career path in
                   any of the fields listed above. Aside from training and
-                  mentoring, we expose young girls to tech competitions where
+                  mentoring, we expose young learners to tech competitions where
                   they can showcase the products they have created using
                   technology.
                 </p>
@@ -116,7 +116,7 @@ export default function TechFingers() {
                 <p className="font-body text-secondary leading-relaxed" style={{ fontSize: "clamp(0.95rem, 1.2vw, 1.05rem)", lineHeight: 1.75 }}>
                   Tech Fingers is currently ongoing in Ogombo Community High
                   School, where we are training over 150 junior secondary school
-                  girls on how to use a computer and on UI/UX Design and Web
+                  students on how to use a computer and on UI/UX Design and Web
                   Development.
                 </p>
               </div>
@@ -131,15 +131,15 @@ export default function TechFingers() {
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeIn>
             <h2 id="tracks-heading" className="section-title mb-16">
-              Career <span className="text-pink">Tracks</span>
+              Career <span className="text-primary">Tracks</span>
             </h2>
           </FadeIn>
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 lg:gap-10">
             {tracks.map((track, i) => (
               <FadeIn key={track.title} delay={i * 70}>
-                <div className="border-t-2 border-pink pt-6">
+                <div className="border-t-2 border-accent pt-6">
                   <span
-                    className="font-display font-bold text-pink mb-3 block"
+                    className="font-display font-bold text-accent mb-3 block"
                     style={{ fontSize: "clamp(1.6rem, 2.5vw, 2rem)", letterSpacing: "-0.03em" }}
                     aria-hidden="true"
                   >
@@ -162,7 +162,7 @@ export default function TechFingers() {
 
             <FadeIn>
               <h2 id="why-heading" className="section-title mb-8">
-                Built for <span className="text-pink">Bold Girls</span>
+                Built for <span className="text-primary">Bold Learners</span>
               </h2>
             </FadeIn>
 
@@ -198,25 +198,25 @@ export default function TechFingers() {
 
       {/* TechFingers platform CTA */}
       <section className="py-16 lg:py-24 bg-secondary relative overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-pink" aria-hidden="true" />
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-accent" aria-hidden="true" />
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
           <FadeIn>
             <div className="max-w-2xl">
               <h2 className="section-title mb-5" style={{ color: "white" }}>
-                The <span className="text-pink">TechFingers</span> Platform
+                The <span className="text-primary">TechFingers</span> Platform
               </h2>
               <p className="font-body text-white/85 leading-relaxed mb-8" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
-                An eLearning platform where secondary school girls, female
-                undergraduates, young female professionals, and female job
+                An eLearning platform where secondary school students,
+                undergraduates, working professionals, and job
                 seekers can register and start learning at their own pace from
-                anywhere. The platform connects young females to other females
+                anywhere. The platform connects learners to each other
                 across the globe through a community channel.
               </p>
               <a
                 href="https://techfingers.io"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-pink text-white font-body font-bold text-sm transition-opacity hover:opacity-90"
+                className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-primary text-white font-body font-bold text-sm transition-opacity hover:opacity-90"
               >
                 Visit TechFingers.io
                 <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
@@ -232,9 +232,9 @@ export default function TechFingers() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeIn>
-            <div className="border-t-2 border-pink pt-10 max-w-2xl">
+            <div className="border-t-2 border-accent pt-10 max-w-2xl">
               <h2 className="section-title mb-5">
-                Get Your <span className="text-pink">Child Enrolled</span>
+                Get Your <span className="text-primary">Child Enrolled</span>
               </h2>
               <p className="font-body text-secondary leading-relaxed mb-8" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)" }}>
                 Reach out to us to find out how to enroll your child or bring
@@ -242,7 +242,7 @@ export default function TechFingers() {
               </p>
               <Link
                 href="/contact"
-                className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-pink text-white font-body font-bold text-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-white font-body font-bold text-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 Contact Us
               </Link>
