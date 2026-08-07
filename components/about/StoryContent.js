@@ -3,6 +3,7 @@
 import { useRef, useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
+import { AUDIENCE_DESCRIPTOR } from "@/lib/content";
 
 function FadeIn({ children, delay = 0, className = "" }) {
   const ref = useRef(null);
@@ -59,10 +60,10 @@ function StoryImage({ src, alt, caption, aspect = "aspect-[4/3]" }) {
 }
 
 const dataPoints = [
-  { value: "7 in 10", label: "Girls in Nigeria and across Africa lack computer literacy skills" },
-  { value: "85%",     label: "Of women lack the tech skills required by today's jobs" },
+  { value: "7 in 10", label: "Young people in Nigeria and across Africa lack computer literacy skills" },
+  { value: "85%",     label: "Of underserved communities lack the tech skills required by today's jobs" },
   { value: "90%+",    label: "Of jobs today have a significant digital component" },
-  { value: "2013",    label: "Year Africa's digital gender gap started widening. It hasn't stopped." },
+  { value: "2013",    label: "Year Africa's digital skills gap started widening. It hasn't stopped." },
 ];
 
 export default function StoryContent() {
@@ -75,7 +76,7 @@ export default function StoryContent() {
 
           <FadeIn>
             <h2 id="origin-heading" className="section-title mb-12 lg:mb-16">
-              In Her <span className="text-pink">Own Words</span>
+              In Her <span className="text-primary">Own Words</span>
             </h2>
           </FadeIn>
 
@@ -96,7 +97,7 @@ export default function StoryContent() {
                   style={{ fontSize: "clamp(1.05rem, 1.5vw, 1.2rem)", lineHeight: 1.75 }}>
                   I grew up in a community where the computer literacy gap is very wide.
                   Despite having the highest growth in internet penetration across the globe,
-                  Africa remains the only continent whose digital gender gap has widened
+                  Africa remains the only continent whose digital divide has widened
                   since 2013. Barriers contributing to the gap include unaffordable access,
                   threats to access and use, low digital literacy and confidence, and the lack
                   of relevant content, applications, and services.
@@ -105,9 +106,9 @@ export default function StoryContent() {
               <FadeIn delay={220}>
                 <p className="font-body text-secondary leading-relaxed"
                   style={{ fontSize: "clamp(1.05rem, 1.5vw, 1.2rem)", lineHeight: 1.75 }}>
-                  Over 90% of jobs presently have a digital component, and 85% of women
+                  Over 90% of jobs presently have a digital component, and 85% of underserved communities
                   do not have the required tech skills to fill in these gaps. Another
-                  problem we are tackling is that 7 in 10 girls in Nigeria and across
+                  problem we are tackling is that 7 in 10 young people in Nigeria and across
                   Africa lack computer literacy skills.
                 </p>
               </FadeIn>
@@ -133,7 +134,7 @@ export default function StoryContent() {
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-8">
             {dataPoints.map((d, i) => (
               <FadeIn key={d.label} delay={i * 90}>
-                <div className="border-t-2 border-pink pt-6">
+                <div className="border-t-2 border-accent pt-6">
                   <div className="font-display font-bold text-secondary leading-none mb-3"
                     style={{ fontSize: "clamp(2rem, 3.5vw, 3rem)", letterSpacing: "-0.03em" }}>
                     {d.value}
@@ -151,7 +152,7 @@ export default function StoryContent() {
 
       {/* ── Pull Quote ───────────────────────────────────────────────── */}
       <section aria-label="Founder quote" className="py-16 lg:py-28 bg-secondary relative overflow-hidden">
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-pink" aria-hidden="true" />
+        <div className="absolute left-0 top-0 bottom-0 w-px bg-accent" aria-hidden="true" />
         <div className="absolute select-none pointer-events-none font-display font-bold text-white leading-none"
           style={{ fontSize: "clamp(18rem, 35vw, 30rem)", opacity: 0.025, right: "-2rem", top: "-4rem" }}
           aria-hidden="true">"</div>
@@ -163,7 +164,7 @@ export default function StoryContent() {
                 style={{ fontSize: "clamp(1.8rem, 3.8vw, 3.4rem)", lineHeight: 1.15, letterSpacing: "-0.03em", maxWidth: "22ch" }}>
                 "Modern technologies require infrastructure to run; without the
                 necessary equipment, the{" "}
-                <span className="text-pink">teaching never leaves</span>{" "}
+                <span className="text-primary">teaching never leaves</span>{" "}
                 the theoretical."
               </p>
               <footer className="mt-8">
@@ -184,7 +185,7 @@ export default function StoryContent() {
 
           <FadeIn>
             <h2 id="challenges-heading" className="section-title mb-12 lg:mb-16">
-              Building It <span className="text-pink">Anyway</span>
+              Building It <span className="text-primary">Anyway</span>
             </h2>
           </FadeIn>
 
@@ -194,7 +195,7 @@ export default function StoryContent() {
               <FadeIn delay={80}>
                 <p className="font-body text-secondary leading-relaxed"
                   style={{ fontSize: "clamp(1.05rem, 1.5vw, 1.2rem)", lineHeight: 1.75 }}>
-                  I have had some challenges in training women and girls, including a lack
+                  I have had some challenges in training students and communities, including a lack
                   of technological components, especially computers, cultural norms, and
                   financial capacity to build tech solutions and run tech programmes.
                 </p>
@@ -202,8 +203,8 @@ export default function StoryContent() {
               <FadeIn delay={150}>
                 <p className="font-body text-secondary leading-relaxed"
                   style={{ fontSize: "clamp(1.05rem, 1.5vw, 1.2rem)", lineHeight: 1.75 }}>
-                  In many communities, the idea of a girl spending time on a computer,
-                  rather than on domestic duties, is a point of contention that must be
+                  In many communities, the idea of a young person spending time on a computer,
+                  rather than on domestic or family duties, is a point of contention that must be
                   navigated with patience and proof. The financial capacity to build and
                   sustain tech programmes in underserved areas remains a persistent and
                   honest challenge.
@@ -212,8 +213,8 @@ export default function StoryContent() {
               <FadeIn delay={220}>
                 <p className="font-body text-secondary leading-relaxed"
                   style={{ fontSize: "clamp(1.05rem, 1.5vw, 1.2rem)", lineHeight: 1.75 }}>
-                  But the obstacles don't change what is true: a woman with digital
-                  skills is a woman with options. And a community where women have
+                  But the obstacles don't change what is true: a person with digital
+                  skills is a person with options. And a community where people have
                   options is a community that grows.
                 </p>
               </FadeIn>
@@ -222,7 +223,7 @@ export default function StoryContent() {
             <FadeIn delay={100} className="w-full lg:order-2">
               <StoryImage
                 src={null}
-                alt="Women in a rural community learning digital skills"
+                alt="Community members in a rural area learning digital skills"
                 caption="Community outreach programme, Ogun State"
                 aspect="aspect-[4/3]"
               />
@@ -239,26 +240,26 @@ export default function StoryContent() {
 
           <FadeIn>
             <h2 id="vision-mission-heading" className="section-title mb-12 lg:mb-16">
-              Vision &amp; <span className="text-pink">Mission</span>
+              Vision &amp; <span className="text-primary">Mission</span>
             </h2>
           </FadeIn>
 
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 pb-16 lg:pb-24 border-b border-bdr mb-16 lg:mb-24">
 
             <FadeIn delay={80}>
-              <div className="border-t-2 border-pink pt-8">
+              <div className="border-t-2 border-accent pt-8">
                 <p className="font-body font-semibold text-primary uppercase mb-5"
                   style={{ fontSize: "0.72rem", letterSpacing: "0.16em" }}>
                   Our Vision
                 </p>
                 <p className="font-body text-secondary leading-relaxed"
                   style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
-                  To give young girls and women access to digital technology-based,
-                  life-altering opportunities so they can achieve fulfilment in both
-                  their personal and professional lives. In essence, we are creating
-                  the{" "}
+                  To equip students, youth, and underserved communities with access
+                  to digital technology-based, life-altering opportunities so they
+                  can achieve fulfilment in both their personal and professional
+                  lives. In essence, we are creating the{" "}
                   <span className="font-semibold text-secondary">"tech-preneurs"</span>{" "}
-                  of tomorrow — women who will use technology to tackle the world's issues.
+                  of tomorrow — innovators who will use technology to tackle the world's issues.
                 </p>
               </div>
             </FadeIn>
@@ -271,7 +272,7 @@ export default function StoryContent() {
                 </p>
                 <p className="font-body text-secondary leading-relaxed"
                   style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
-                  To actively empower women and girls with ICT, business, and financial
+                  To actively empower students, youth, and underserved communities with ICT, business, and financial
                   literacy skills in order to elevate them to be{" "}
                   <span className="font-semibold text-secondary">leaders and agents of change</span>.
                 </p>
@@ -284,7 +285,7 @@ export default function StoryContent() {
           <div className="grid lg:grid-cols-2 gap-16 lg:gap-24 items-start">
             <FadeIn>
               <h2 className="section-title mb-8">
-                About <span className="text-pink">Blue Sands Academy</span>
+                About <span className="text-primary">Blue Sands Academy</span>
               </h2>
             </FadeIn>
 
@@ -292,10 +293,10 @@ export default function StoryContent() {
               <FadeIn delay={80}>
                 <p className="font-body text-secondary leading-relaxed"
                   style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
-                  Blue Sands Academy is a training centre for girls in ICT. We focus on
-                  building the technological capacities of females, starting with secondary
-                  school girls, female undergraduates, and female professionals. We believe
-                  that fostering young girls' interest in technology starts at an early age,
+                  Blue Sands Academy is a training centre for ICT skills. We focus on
+                  building the technological capacities of students and communities,
+                  starting with {AUDIENCE_DESCRIPTOR}. We believe
+                  that fostering young people's interest in technology starts at an early age,
                   and that this is not only a good idea but an essential one.
                 </p>
               </FadeIn>
@@ -313,7 +314,7 @@ export default function StoryContent() {
                   style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
                   Blue Sands Academy was founded by Alero Thompson, who recognised that
                   the world of technology was changing rapidly and that training programmes
-                  for women and girls in ICT were severely lacking. We set out to close
+                  in ICT were severely lacking for students and underserved communities. We set out to close
                   that gap. We are still closing it.
                 </p>
               </FadeIn>
@@ -328,19 +329,19 @@ export default function StoryContent() {
       <section className="py-16 lg:py-24 bg-white">
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <FadeIn>
-            <div className="border-t-2 border-pink pt-10 max-w-2xl">
+            <div className="border-t-2 border-accent pt-10 max-w-2xl">
               <h2 className="section-title mb-5">
-                Be Part of the <span className="text-pink">Change</span>
+                Be Part of the <span className="text-primary">Change</span>
               </h2>
               <p className="font-body text-secondary leading-relaxed mb-8"
                 style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)" }}>
                 Blue Sands Academy is not a charity project. It is an investment in the
                 most underleveraged asset in Nigerian society: the intelligence, ambition,
-                and capability of its women and girls.
+                and capability of its students, youth, and communities.
               </p>
               <div className="flex flex-col sm:flex-row items-start sm:items-center gap-4">
                 <Link href="/contact"
-                  className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-pink text-white font-body font-bold text-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2">
+                  className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-white font-body font-bold text-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2">
                   Partner With Us
                 </Link>
                 <Link href="/about/team"
