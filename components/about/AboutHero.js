@@ -5,7 +5,7 @@ export default function AboutHero() {
       className="relative bg-secondary min-h-screen flex flex-col overflow-hidden"
     >
       {/* Pink left bar */}
-      <div className="absolute left-0 top-0 bottom-0 w-px bg-pink z-10" aria-hidden="true" />
+      <div className="absolute left-0 top-0 bottom-0 w-px bg-accent z-10" aria-hidden="true" />
 
       {/* Ghost texture */}
       <div
@@ -35,13 +35,13 @@ export default function AboutHero() {
         >
           A Nigeria Where<br />
           Every{" "}
-          <span className="text-pink">Woman</span><br />
+          <span className="text-primary">Person</span><br />
           Has Digital Power.
         </h1>
 
         {/* Pink bridge */}
         <div
-          className="rounded-full bg-pink"
+          className="rounded-full bg-accent"
           style={{ width: 40, height: 2, marginTop: "2.5rem", marginBottom: "2rem" }}
           aria-hidden="true"
         />
@@ -51,7 +51,7 @@ export default function AboutHero() {
           style={{ fontSize: "clamp(1rem, 1.4vw, 1.15rem)", lineHeight: 1.7 }}
         >
           Founded in 2018 and operating across 6 states, Blue Sands Academy
-          is building the infrastructure of female digital empowerment in Nigeria.
+          is building the infrastructure of digital empowerment in Nigeria.
         </p>
       </div>
 
