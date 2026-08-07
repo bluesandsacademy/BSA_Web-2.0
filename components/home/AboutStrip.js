@@ -4,7 +4,7 @@ const facts = [
   { value: "2018", label: "Year founded" },
   { value: "6+", label: "States reached" },
   { value: "3", label: "Flagship programmes" },
-  { value: "100%", label: "Women-focused" },
+  { value: "100%", label: "Access-Focused" },
 ];
 
 export default function AboutStrip() {
@@ -23,7 +23,7 @@ export default function AboutStrip() {
           style={{ color: "white" }}
         >
           About{" "}
-          <span className="text-pink">Blue Sands</span>
+          <span className="text-primary">Blue Sands</span>
           <br />Academy
         </h2>
 
@@ -31,18 +31,20 @@ export default function AboutStrip() {
         <div>
           <div className="space-y-5 mb-10">
             <p className="font-body text-white/85 leading-relaxed">
-              Blue Sands Academy offers ICT courses to female students. We focus
-              our efforts on assisting girls and women in developing technical
-              skills, from secondary school girls to female college students to
-              working professionals. We hope to close the gender digital gap by
-              providing women with ICT training and other tech skills.
+              Blue Sands Academy offers ICT courses to students of all
+              backgrounds. We focus our efforts on equipping learners with
+              technical skills, reaching secondary school students,
+              undergraduates, and working professionals. We hope to close the
+              digital divide by providing accessible ICT training and other
+              tech skills.
             </p>
             <p className="font-body text-white/85 leading-relaxed">
-              Blue Sands Academy, a training company, aims to close the gender
-              digital divide by providing women with ICT training and other IT
-              skills. We believe that encouraging young girls' interest in digital
-              technology is critical. Furthermore, we believe that this is an
-              excellent and necessary way to improve the lives of girls.
+              Blue Sands Academy, a training company, aims to close the digital
+              divide by providing students, youth, and underserved communities
+              with ICT training and other IT skills. We believe that
+              encouraging young people's interest in digital technology is
+              critical. Furthermore, we believe that this is an excellent and
+              necessary way to improve lives and expand opportunity.
             </p>
           </div>
 
