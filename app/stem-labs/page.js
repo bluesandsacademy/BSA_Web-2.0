@@ -106,7 +106,7 @@ export default function STEMLabsPage() {
                 <p className="font-body text-secondary leading-relaxed" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}>
                   Our STEM Labs are purpose-built training spaces equipped with
                   computers, high-speed internet, and design tools. They are
-                  staffed by experienced tech educators and open to
+                  staffed by experienced tech educators and open to{" "}
                   {AUDIENCE_DESCRIPTOR}, plus adults
                   entering or re-entering the workforce.
                 </p>
