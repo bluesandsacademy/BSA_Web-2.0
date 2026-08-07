@@ -12,7 +12,7 @@ export default function InitiativesTransition() {
           }}
         >
           None of this happens alone —{" "}
-          <span className="text-pink">it takes organisations who believe in the same future.</span>
+          <span className="text-primary">it takes organisations who believe in the same future.</span>
         </p>
       </div>
     </div>

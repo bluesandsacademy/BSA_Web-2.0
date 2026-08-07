@@ -100,7 +100,7 @@ export default function TeamPreview() {
       <div className="max-w-7xl mx-auto px-6 lg:px-8">
 
         <h2 id="people-heading" className="section-title mb-16 lg:mb-20">
-          Go <span className="text-pink">Deeper</span>
+          Go <span className="text-primary">Deeper</span>
         </h2>
 
         <div className="grid sm:grid-cols-2 lg:grid-cols-4 gap-10 lg:gap-12">
