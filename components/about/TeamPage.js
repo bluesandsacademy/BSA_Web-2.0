@@ -17,8 +17,8 @@ import { useRef, useEffect, useState } from "react";
 const TEAM = [
   {
     name: "Alero Thompson",
-    role: "Co-Founder / CEO",
-    bio: "Co-Founder and CEO of Blue Sands STEM Labs and a standout voice in business, technology, and STEM education.",
+    role: "Founder / CEO",
+    bio: "Founder and CEO of Blue Sands STEM Labs and a standout voice in business, technology, and STEM education.",
     src: null, // "/ceo.jpeg"
     initials: "AT",
     linkedin: "#",
@@ -79,8 +79,13 @@ function TeamCard({ member, index }) {
 
   useEffect(() => {
     const observer = new IntersectionObserver(
-      ([entry]) => { if (entry.isIntersecting) { setVisible(true); observer.disconnect(); } },
-      { threshold: 0.12 }
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setVisible(true);
+          observer.disconnect();
+        }
+      },
+      { threshold: 0.12 },
     );
     if (ref.current) observer.observe(ref.current);
     return () => observer.disconnect();
@@ -97,7 +102,10 @@ function TeamCard({ member, index }) {
       }}
     >
       {/* Photo */}
-      <div className="relative w-full rounded-2xl overflow-hidden mb-5" style={{ aspectRatio: "3/4" }}>
+      <div
+        className="relative w-full rounded-2xl overflow-hidden mb-5"
+        style={{ aspectRatio: "3/4" }}
+      >
         <div className="absolute top-0 left-0 right-0 h-1 bg-accent z-10" />
 
         {member.src ? (
@@ -111,16 +119,26 @@ function TeamCard({ member, index }) {
         ) : (
           <div
             className="absolute inset-0 flex flex-col items-center justify-center gap-3"
-            style={{ background: "linear-gradient(135deg, rgba(4,131,226,0.12) 0%, rgba(2,52,90,0.55) 100%)" }}
+            style={{
+              background:
+                "linear-gradient(135deg, rgba(4,131,226,0.12) 0%, rgba(2,52,90,0.55) 100%)",
+            }}
             aria-hidden="true"
           >
             <div
               className="w-14 h-14 rounded-full flex items-center justify-center font-display font-bold text-white"
-              style={{ background: "rgba(230,63,142,0.2)", border: "1px solid rgba(230,63,142,0.3)", fontSize: "1.1rem" }}
+              style={{
+                background: "rgba(230,63,142,0.2)",
+                border: "1px solid rgba(230,63,142,0.3)",
+                fontSize: "1.1rem",
+              }}
             >
               {member.initials}
             </div>
-            <p className="font-body text-white/20 uppercase" style={{ fontSize: "0.6rem", letterSpacing: "0.2em" }}>
+            <p
+              className="font-body text-white/20 uppercase"
+              style={{ fontSize: "0.6rem", letterSpacing: "0.2em" }}
+            >
               Photo coming soon
             </p>
           </div>
@@ -130,12 +148,19 @@ function TeamCard({ member, index }) {
       {/* Identity */}
       <h3
         className="font-display font-bold text-secondary mb-0.5"
-        style={{ fontSize: "clamp(1.1rem, 1.6vw, 1.3rem)", letterSpacing: "-0.02em" }}
+        style={{
+          fontSize: "clamp(1.1rem, 1.6vw, 1.3rem)",
+          letterSpacing: "-0.02em",
+        }}
       >
         {member.name}
       </h3>
-      <p className="font-body font-medium text-primary text-xs mb-3">{member.role}</p>
-      <p className="font-body text-muted text-sm leading-relaxed mb-4">{member.bio}</p>
+      <p className="font-body font-medium text-primary text-xs mb-3">
+        {member.role}
+      </p>
+      <p className="font-body text-muted text-sm leading-relaxed mb-4">
+        {member.bio}
+      </p>
 
       {/* LinkedIn */}
       {member.linkedin && (
@@ -146,7 +171,12 @@ function TeamCard({ member, index }) {
           aria-label={`${member.name} on LinkedIn`}
           className="inline-flex items-center gap-1.5 font-body font-semibold text-xs text-muted hover:text-primary transition-colors"
         >
-          <svg className="w-3.5 h-3.5" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+          <svg
+            className="w-3.5 h-3.5"
+            fill="currentColor"
+            viewBox="0 0 24 24"
+            aria-hidden="true"
+          >
             <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
           </svg>
           LinkedIn
@@ -161,34 +191,62 @@ export default function TeamPage() {
     <>
       {/* Hero */}
       <section className="relative bg-secondary overflow-hidden py-28 lg:py-40">
-        <div className="absolute left-0 top-0 bottom-0 w-px bg-accent z-10" aria-hidden="true" />
+        <div
+          className="absolute left-0 top-0 bottom-0 w-px bg-accent z-10"
+          aria-hidden="true"
+        />
         <div
           className="absolute select-none pointer-events-none font-display font-bold text-white leading-none"
-          style={{ fontSize: "clamp(12rem, 24vw, 20rem)", opacity: 0.025, right: "-1rem", bottom: "-2rem", lineHeight: 0.85 }}
+          style={{
+            fontSize: "clamp(12rem, 24vw, 20rem)",
+            opacity: 0.025,
+            right: "-1rem",
+            bottom: "-2rem",
+            lineHeight: 0.85,
+          }}
           aria-hidden="true"
         >
           Team
         </div>
         <div className="relative z-10 max-w-7xl mx-auto px-6 lg:px-8">
-          <p className="font-body font-medium text-white/35 uppercase mb-8" style={{ fontSize: "0.7rem", letterSpacing: "0.18em" }}>
+          <p
+            className="font-body font-medium text-white/35 uppercase mb-8"
+            style={{ fontSize: "0.7rem", letterSpacing: "0.18em" }}
+          >
             About · Our Team
           </p>
           <h1
             className="font-display font-bold text-white max-w-2xl"
-            style={{ fontSize: "clamp(3rem, 6.5vw, 6rem)", lineHeight: 1.0, letterSpacing: "-0.03em" }}
+            style={{
+              fontSize: "clamp(3rem, 6.5vw, 6rem)",
+              lineHeight: 1.0,
+              letterSpacing: "-0.03em",
+            }}
           >
-            The People <span className="text-primary">Building</span> the Mission
+            The People <span className="text-primary">Building</span> the
+            Mission
           </h1>
-          <div className="rounded-full bg-accent mt-8" style={{ width: 36, height: 2 }} aria-hidden="true" />
-          <p className="font-body text-white/85 mt-6 max-w-lg" style={{ fontSize: "clamp(1rem, 1.4vw, 1.1rem)", lineHeight: 1.7 }}>
+          <div
+            className="rounded-full bg-accent mt-8"
+            style={{ width: 36, height: 2 }}
+            aria-hidden="true"
+          />
+          <p
+            className="font-body text-white/85 mt-6 max-w-lg"
+            style={{ fontSize: "clamp(1rem, 1.4vw, 1.1rem)", lineHeight: 1.7 }}
+          >
             A focused team with a clear conviction: the digital skills gap in
-            Nigeria closes when communities build the tools to close it themselves.
+            Nigeria closes when communities build the tools to close it
+            themselves.
           </p>
         </div>
       </section>
 
       {/* Team Grid */}
-      <section aria-labelledby="team-heading" className="py-16 lg:py-28 bg-white">
+      <section
+        aria-labelledby="team-heading"
+        className="py-16 lg:py-28 bg-white"
+      >
         <div className="max-w-7xl mx-auto px-6 lg:px-8">
           <h2 id="team-heading" className="section-title mb-16 lg:mb-20">
             Core <span className="text-primary">Team</span>
@@ -208,7 +266,10 @@ export default function TeamPage() {
             <h2 className="section-title mb-5">
               Want to <span className="text-primary">Join</span> the Team?
             </h2>
-            <p className="font-body text-secondary leading-relaxed mb-8" style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)" }}>
+            <p
+              className="font-body text-secondary leading-relaxed mb-8"
+              style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)" }}
+            >
               We are always looking for educators, technologists, and community
               builders who believe in what we are building.
             </p>
@@ -217,8 +278,19 @@ export default function TeamPage() {
               className="inline-flex items-center gap-2 px-7 py-3 rounded-full bg-primary text-white font-body font-bold text-sm transition-opacity hover:opacity-90"
             >
               See Open Roles
-              <svg className="w-4 h-4" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5} aria-hidden="true">
-                <path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" />
+              <svg
+                className="w-4 h-4"
+                fill="none"
+                viewBox="0 0 24 24"
+                stroke="currentColor"
+                strokeWidth={2.5}
+                aria-hidden="true"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  d="M9 5l7 7-7 7"
+                />
               </svg>
             </Link>
           </div>
