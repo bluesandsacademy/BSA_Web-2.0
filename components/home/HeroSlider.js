@@ -13,7 +13,7 @@ const SLIDES = [
     num: "01",
     lines: [
       "We Invest In",
-      { before: "", pink: "Women", after: " and Girls" },
+      { before: "", pink: "People", after: " and Communities" },
     ],
     body: "So they can have the technological skills to turn their lives and communities around.",
     cta: "Partner With Us",
@@ -23,10 +23,10 @@ const SLIDES = [
   {
     num: "02",
     lines: [
-      "Closing the Gender",
-      { before: "Digital Gap ", pink: "Starts", after: " Here" },
+      "Closing the Digital",
+      { before: "Divide ", pink: "Starts", after: " Here" },
     ],
-    body: "Women and girls need to be given the tools they need to use technology.",
+    body: "Students, youth, and underserved communities need to be given the tools they need to use technology.",
     cta: "See How",
     href: "/services/stem-training",
     image: "/hero-slides/slide2.jpg",
@@ -34,7 +34,7 @@ const SLIDES = [
   {
     num: "03",
     lines: [
-      { before: "Women With ", pink: "Disabilities", after: "" },
+      { before: "Persons With ", pink: "Disabilities", after: "" },
       "Are Our Priority",
     ],
     body: "Building skills through a journey of empowerment, confidence, and full potential.",
@@ -45,11 +45,11 @@ const SLIDES = [
   {
     num: "04",
     lines: [
-      "Powering Girls and",
-      { before: "Women to ", pink: "Excel", after: "" },
+      "Powering Students and",
+      { before: "Youth to ", pink: "Excel", after: "" },
       "in Their Chosen Field",
     ],
-    body: "Moving women and girls forward through technology.",
+    body: "Moving students and youth forward through technology.",
     cta: "See Our Impact",
     href: "/about",
     image: "/hero-slides/slide4.jpg",
@@ -57,10 +57,10 @@ const SLIDES = [
   {
     num: "05",
     lines: [
-      "A Woman's Place",
-      { before: "Is in the ", pink: "Revolution", after: "" },
+      "Everyone Has a Place",
+      { before: "In the ", pink: "Revolution", after: "" },
     ],
-    body: "Creating a generation of female leaders in technology.",
+    body: "Creating a generation of leaders in technology.",
     cta: "Join the Movement",
     href: "/about/story",
     image: "/hero-slides/slide5.jpg",
@@ -75,7 +75,7 @@ function renderLine(line) {
   return (
     <>
       {line.before}
-      <span className="text-pink">{line.pink}</span>
+      <span className="text-primary">{line.pink}</span>
       {line.after}
     </>
   );
@@ -190,14 +190,14 @@ export default function HeroSlider() {
 
       {/* Pink divider at 55% — left edge of image panel */}
       <div
-        className="hidden lg:block absolute top-0 bottom-0 w-px bg-pink z-10"
+        className="hidden lg:block absolute top-0 bottom-0 w-px bg-accent z-10"
         style={{ left: "55%" }}
         aria-hidden="true"
       />
 
       {/* Far-left pink bar */}
       <div
-        className="hidden lg:block absolute left-0 top-0 bottom-0 w-px bg-pink z-10"
+        className="hidden lg:block absolute left-0 top-0 bottom-0 w-px bg-accent z-10"
         aria-hidden="true"
       />
 
@@ -264,7 +264,7 @@ export default function HeroSlider() {
             */}
             <div
               key={`${rev}-bridge`}
-              className="rounded-full bg-pink animate-fade-up"
+              className="rounded-full bg-accent animate-fade-up"
               style={{
                 width: 36,
                 height: 2,
@@ -297,7 +297,7 @@ export default function HeroSlider() {
             >
               <Link
                 href={slide.href}
-                className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-pink text-white font-body font-bold text-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-pink focus-visible:ring-offset-2"
+                className="inline-flex items-center justify-center px-7 py-3 rounded-full bg-primary text-white font-body font-bold text-sm transition-opacity hover:opacity-90 focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2"
               >
                 {slide.cta}
               </Link>
@@ -336,7 +336,7 @@ export default function HeroSlider() {
                   {i === index && (
                     <span
                       key={`mob-prog-${rev}`}
-                      className="absolute inset-0 rounded-full bg-pink origin-left"
+                      className="absolute inset-0 rounded-full bg-primary origin-left"
                       style={{ animation: `progress-fill ${INTERVAL}ms linear forwards` }}
                     />
                   )}
@@ -376,7 +376,7 @@ export default function HeroSlider() {
               {i === index && (
                 <span
                   key={`prog-${rev}`}
-                  className="absolute inset-0 rounded-full bg-pink origin-left"
+                  className="absolute inset-0 rounded-full bg-primary origin-left"
                   style={{ animation: `progress-fill ${INTERVAL}ms linear forwards` }}
                 />
               )}
