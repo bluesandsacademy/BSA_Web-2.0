@@ -166,12 +166,9 @@ New:
 - Example: *"We don't just believe in the potential of students and communities. We build it."*
 ```
 
-- [ ] **Step 6: Commit**
+- [ ] **Step 6: Do not commit**
 
-```bash
-git add CLAUDE.md
-git commit -m "Update CLAUDE.md mission statement and pink color-usage rule for general-audience repositioning"
-```
+`CLAUDE.md` is listed in `.gitignore` ("internal dev files — never commit") and is confirmed untracked (`git ls-files | grep -x CLAUDE.md` returns nothing). The edits above are applied to the file on disk only — do not run `git add CLAUDE.md` (it will be rejected as an ignored path) and do not include it in any commit for this task. Skip straight to Task 4 once Steps 1-5 are applied.
 
 ---
 
