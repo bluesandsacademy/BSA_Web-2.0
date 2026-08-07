@@ -114,7 +114,7 @@ export default function ScrollChapter() {
                   style={{
                     fontSize: "11px",
                     lineHeight: 1,
-                    backgroundColor: isActive && !isHovered ? "#E63F8E" : "#02345A",
+                    backgroundColor: isActive && !isHovered ? "var(--color-accent)" : "#02345A",
                     padding: "5px 11px",
                     letterSpacing: "0.01em",
                     transition: "background-color 0.2s ease",
@@ -128,7 +128,7 @@ export default function ScrollChapter() {
                     height: 0,
                     borderTop: "4px solid transparent",
                     borderBottom: "4px solid transparent",
-                    borderLeft: `5px solid ${isActive && !isHovered ? "#E63F8E" : "#02345A"}`,
+                    borderLeft: `5px solid ${isActive && !isHovered ? "var(--color-accent)" : "#02345A"}`,
                     flexShrink: 0,
                     transition: "border-color 0.2s ease",
                   }}
@@ -142,7 +142,7 @@ export default function ScrollChapter() {
                   style={{
                     width: "16px",
                     height: "16px",
-                    backgroundColor: "rgba(230,63,142,0.22)",
+                    backgroundColor: "color-mix(in srgb, var(--color-accent) 22%, transparent)",
                     pointerEvents: "none",
                   }}
                   aria-hidden="true"
@@ -163,16 +163,16 @@ export default function ScrollChapter() {
                   height: isActive ? "11px" : "7px",
                   borderRadius: "50%",
                   backgroundColor: isActive
-                    ? "#E63F8E"
+                    ? "var(--color-accent)"
                     : isPast
-                    ? "rgba(230,63,142,0.3)"
+                    ? "color-mix(in srgb, var(--color-accent) 30%, transparent)"
                     : "transparent",
                   border: isActive
-                    ? "2px solid #E63F8E"
+                    ? "2px solid var(--color-accent)"
                     : isPast
-                    ? "1.5px solid rgba(230,63,142,0.45)"
+                    ? "1.5px solid color-mix(in srgb, var(--color-accent) 45%, transparent)"
                     : "1.5px solid #CBD5E1",
-                  boxShadow: !isActive && isHovered ? "0 0 0 3px rgba(230,63,142,0.18)" : "none",
+                  boxShadow: !isActive && isHovered ? "0 0 0 3px color-mix(in srgb, var(--color-accent) 18%, transparent)" : "none",
                   transition: "all 0.25s cubic-bezier(0.22,1,0.36,1)",
                   cursor: "pointer",
                   outline: "none",
@@ -189,7 +189,7 @@ export default function ScrollChapter() {
                 style={{
                   width: "1.5px",
                   height: "20px",
-                  backgroundColor: isPast ? "rgba(230,63,142,0.35)" : "#E2EBF6",
+                  backgroundColor: isPast ? "color-mix(in srgb, var(--color-accent) 35%, transparent)" : "#E2EBF6",
                   transition: "background-color 0.4s ease",
                   flexShrink: 0,
                 }}

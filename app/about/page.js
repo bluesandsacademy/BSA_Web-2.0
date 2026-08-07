@@ -7,7 +7,7 @@ import TeamPreview from "@/components/about/TeamPreview";
 export const metadata = {
   title: "About Us",
   description:
-    "Learn about Blue Sands Academy — our mission, values, impact, and the people closing the gender digital gap across Nigeria since 2018.",
+    "Learn about Blue Sands Academy — our mission, values, impact, and the people closing the digital divide across Nigeria since 2018.",
 };
 
 export default function AboutPage() {

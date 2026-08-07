@@ -12,13 +12,13 @@ const achievements = [
   },
   {
     display: "150+",
-    color: "#0077FF",
+    color: "var(--color-accent)",
     title: "Schools defeated across Nigeria",
     label: "National Beyond School ICT · 2019",
   },
   {
     display: "200+",
-    color: "#0077FF",
+    color: "var(--color-accent)",
     title: "Schools beaten nationwide",
     label: "National Girls in ICT Competition · 2019",
   },

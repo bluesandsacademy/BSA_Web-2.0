@@ -166,7 +166,7 @@ export default function Testimonials() {
                 style={{
                   width: i === current ? "1.5rem" : "0.5rem",
                   height: "0.5rem",
-                  backgroundColor: i === current ? "#0044cc" : "#e2ebf6",
+                  backgroundColor: i === current ? "var(--color-primary)" : "#e2ebf6",
                 }}
               />
             ))}

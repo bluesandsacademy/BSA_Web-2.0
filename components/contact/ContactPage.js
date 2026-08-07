@@ -77,7 +77,7 @@ export default function ContactPage() {
           <p className="font-body text-white/85 mt-6 max-w-xl" style={{ fontSize: "clamp(1rem, 1.4vw, 1.1rem)", lineHeight: 1.7 }}>
             Whether you are a government agency, corporate organisation, NGO, or
             individual investor, we would love to hear from you. Tell us how you
-            want to be part of closing the gender digital gap.
+            want to be part of closing the digital divide.
           </p>
         </div>
       </section>

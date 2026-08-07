@@ -23,7 +23,7 @@ export default function EmailCTA() {
       id="s-subscribe"
       aria-labelledby="email-cta-heading"
       className="relative py-16 lg:py-28 overflow-hidden"
-      style={{ backgroundColor: "#e63f8e" }}
+      style={{ backgroundColor: "var(--color-primary)" }}
     >
       {/* Ghost background word */}
       <span

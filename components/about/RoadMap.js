@@ -141,8 +141,8 @@ export default function RoadMap() {
                           className="absolute left-0 lg:left-40 -translate-x-1/2 mt-1.5 w-3 h-3 rounded-full border-2 shrink-0 z-10"
                           style={{
                             top: "6px",
-                            backgroundColor: m.accent ? "#0077FF" : "white",
-                            borderColor: m.accent ? "#0077FF" : "#E2EBF6",
+                            backgroundColor: m.accent ? "var(--color-accent)" : "white",
+                            borderColor: m.accent ? "var(--color-accent)" : "#E2EBF6",
                           }}
                           aria-hidden="true"
                         />
@@ -151,7 +151,7 @@ export default function RoadMap() {
                           style={{
                             fontSize: "clamp(1.4rem, 2vw, 1.8rem)",
                             letterSpacing: "-0.03em",
-                            color: m.accent ? "#0077FF" : "#02345A",
+                            color: m.accent ? "var(--color-accent)" : "#02345A",
                             opacity: m.accent ? 1 : 0.35,
                           }}
                         >

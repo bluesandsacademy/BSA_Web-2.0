@@ -102,7 +102,7 @@ function BoardCard({ member, index }) {
           >
             <div
               className="w-16 h-16 rounded-full flex items-center justify-center font-display font-bold text-white"
-              style={{ background: "rgba(230,63,142,0.2)", border: "1px solid rgba(230,63,142,0.3)", fontSize: "1.2rem" }}
+              style={{ background: "color-mix(in srgb, var(--color-accent) 20%, transparent)", border: "1px solid color-mix(in srgb, var(--color-accent) 30%, transparent)", fontSize: "1.2rem" }}
             >
               {member.initials}
             </div>

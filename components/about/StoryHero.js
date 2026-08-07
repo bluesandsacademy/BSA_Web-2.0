@@ -89,7 +89,7 @@ export default function StoryHero() {
                 >
                   <div
                     className="w-20 h-20 rounded-full flex items-center justify-center font-display font-bold text-white"
-                    style={{ background: "rgba(0,119,255,0.2)", border: "1px solid rgba(0,119,255,0.3)", fontSize: "1.6rem" }}
+                    style={{ background: "color-mix(in srgb, var(--color-accent) 20%, transparent)", border: "1px solid color-mix(in srgb, var(--color-accent) 30%, transparent)", fontSize: "1.6rem" }}
                   >
                     AT
                   </div>

@@ -289,7 +289,7 @@ export default function Navbar() {
                   <div className="relative pl-5 flex items-center">
                     <span
                       className="absolute left-0 top-1/2 -translate-y-1/2 w-0.5 rounded-full transition-all duration-300"
-                      style={{ height: "2rem", backgroundColor: active ? "#e63f8e" : "transparent" }}
+                      style={{ height: "2rem", backgroundColor: active ? "var(--color-accent)" : "transparent" }}
                       aria-hidden="true"
                     />
                     {children ? (
@@ -301,7 +301,7 @@ export default function Navbar() {
                         style={{
                           fontSize: "clamp(1.9rem, 7vw, 2.6rem)",
                           letterSpacing: "-0.025em",
-                          color: active ? "#e63f8e" : "white",
+                          color: active ? "var(--color-accent)" : "white",
                           opacity: menuOpen ? 1 : 0,
                           transform: menuOpen ? "translateX(0)" : "translateX(-12px)",
                           transition: "opacity 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), color 0.2s ease",
@@ -325,7 +325,7 @@ export default function Navbar() {
                         style={{
                           fontSize: "clamp(1.9rem, 7vw, 2.6rem)",
                           letterSpacing: "-0.025em",
-                          color: active ? "#e63f8e" : "white",
+                          color: active ? "var(--color-accent)" : "white",
                           opacity: menuOpen ? 1 : 0,
                           transform: menuOpen ? "translateX(0)" : "translateX(-12px)",
                           transition: "opacity 0.4s ease, transform 0.4s cubic-bezier(0.22,1,0.36,1), color 0.2s ease",
@@ -355,7 +355,7 @@ export default function Navbar() {
                                 onClick={() => setMenuOpen(false)}
                                 aria-current={childActive ? "page" : undefined}
                                 className="block py-2 font-body font-semibold text-base transition-colors"
-                                style={{ color: childActive ? "#e63f8e" : "rgba(255,255,255,0.65)" }}
+                                style={{ color: childActive ? "var(--color-accent)" : "rgba(255,255,255,0.65)" }}
                               >
                                 {child.label}
                               </Link>
@@ -384,7 +384,7 @@ export default function Navbar() {
             href="/contact"
             onClick={() => setMenuOpen(false)}
             className="block w-full text-center px-6 py-4 rounded-full font-body font-bold text-sm text-white transition-opacity hover:opacity-90"
-            style={{ backgroundColor: "#e63f8e" }}
+            style={{ backgroundColor: "var(--color-primary)" }}
           >
             Partner With Us
           </Link>
