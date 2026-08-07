@@ -1,8 +1,10 @@
+import { AUDIENCE_DESCRIPTOR } from "@/lib/content";
+
 const facts = [
   { value: "2018", label: "Year founded" },
   { value: "6+",   label: "States reached" },
   { value: "3",    label: "Flagship programmes" },
-  { value: "100%", label: "Women-focused" },
+  { value: "100%", label: "Access-Focused" },
 ];
 
 export default function MissionSection() {
@@ -14,7 +16,7 @@ export default function MissionSection() {
         <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 mb-16 lg:mb-24 pb-16 lg:pb-24 border-b border-bdr">
 
           {/* Vision */}
-          <div className="border-t-2 border-pink pt-8">
+          <div className="border-t-2 border-accent pt-8">
             <p
               className="font-body font-semibold text-primary uppercase mb-5"
               style={{ fontSize: "0.72rem", letterSpacing: "0.16em" }}
@@ -25,11 +27,12 @@ export default function MissionSection() {
               className="font-body text-secondary leading-relaxed"
               style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}
             >
-              To give young girls and women access to digital technology-based,
-              life-altering opportunities so they can achieve fulfillment in both
-              their personal and professional lives, creating the{" "}
+              To equip students, youth, and underserved communities with access
+              to digital technology-based, life-altering opportunities so they
+              can achieve fulfillment in both their personal and professional
+              lives, creating the{" "}
               <span className="font-semibold text-secondary">tech-preneurs</span> of
-              tomorrow, women who will use technology to tackle the world's issues.
+              tomorrow — innovators who will use technology to tackle the world's issues.
             </p>
           </div>
 
@@ -45,7 +48,7 @@ export default function MissionSection() {
               className="font-body text-secondary leading-relaxed"
               style={{ fontSize: "clamp(1rem, 1.3vw, 1.1rem)", lineHeight: 1.75 }}
             >
-              To actively empower women and girls with ICT, business, and financial
+              To actively empower students, youth, and underserved communities with ICT, business, and financial
               literacy skills in order to elevate them to be{" "}
               <span className="font-semibold text-secondary">leaders and agents of change</span>.
             </p>
@@ -60,7 +63,7 @@ export default function MissionSection() {
           <div>
             <h2 id="mission-heading" className="section-title mb-12">
               Built on{" "}
-              <span className="text-pink">Purpose</span>,<br />
+              <span className="text-primary">Purpose</span>,<br />
               Driven by Data.
             </h2>
 
@@ -85,12 +88,11 @@ export default function MissionSection() {
               className="font-body text-secondary leading-relaxed"
               style={{ fontSize: "clamp(1rem, 1.2vw, 1.05rem)" }}
             >
-              Blue Sands Academy is a training centre for girls in ICT, focused on
-              building the technological capacities of females, starting with
-              secondary school girls, female undergraduates, and female
-              professionals. We believe that fostering young girls' interest in
-              technology starts at an early age, and that this is not only a good
-              idea, but an essential one.
+              Blue Sands Academy is a training centre for ICT skills, focused on
+              building the technological capacities of students and communities,
+              starting with {AUDIENCE_DESCRIPTOR}. We believe
+              that fostering young people's interest in technology starts at an
+              early age, and that this is not only a good idea, but an essential one.
             </p>
             <p
               className="font-body text-secondary leading-relaxed"
@@ -107,8 +109,9 @@ export default function MissionSection() {
             >
               Founded by Alero Thompson in 2018, BSA was born from a clear
               recognition that technology was changing rapidly and training
-              programmes for women and girls in ICT were severely lacking.
-              We set out to close that gap. We are still closing it.
+              programmes in ICT were severely lacking for students and
+              underserved communities. We set out to close that gap. We are
+              still closing it.
             </p>
           </div>
 
