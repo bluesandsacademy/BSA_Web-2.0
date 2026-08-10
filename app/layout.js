@@ -75,7 +75,7 @@ const jsonLd = {
   url: "https://bluesandsacademy.org",
   description:
     "Closing the digital divide by equipping students, youth, and underserved communities with ICT skills and STEM training across Nigeria.",
-  logo: { "@type": "ImageObject", url: "https://bluesandsacademy.org/logo.png" },
+  logo: { "@type": "ImageObject", url: "https://bluesandsacademy.org/logos/bsa-logo-full.png" },
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "general inquiry",

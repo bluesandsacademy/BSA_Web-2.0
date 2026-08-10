@@ -1,6 +1,7 @@
 "use client";
 
 import { useState, useEffect, useRef } from "react";
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
@@ -206,24 +207,15 @@ export default function Navbar() {
           className="max-w-7xl mx-auto px-6 lg:px-8 flex items-center justify-between py-4 lg:py-5"
         >
           {/* Logo */}
-          <Link
-            href="/"
-            aria-label="Blue Sands Academy, Home"
-            className={[
-              "flex items-center gap-2 font-display font-bold text-base transition-colors",
-              onDark ? "text-white" : "text-secondary",
-            ].join(" ")}
-          >
-            <span
-              className="w-8 h-8 rounded-[5px] flex items-center justify-center text-white text-sm font-extrabold shrink-0 bg-primary"
-              aria-hidden="true"
-            >
-              B
-            </span>
-            <span>
-              Blue Sands{" "}
-              <span className={onDark ? "text-accent" : "text-primary"}>Academy</span>
-            </span>
+          <Link href="/" aria-label="Blue Sands Academy, Home" className="flex items-center">
+            <Image
+              src="/logos/bsa-mark.png"
+              alt=""
+              width={41}
+              height={41}
+              className="w-10.25 h-10.25 shrink-0"
+              priority
+            />
           </Link>
 
           {/* Desktop nav links */}

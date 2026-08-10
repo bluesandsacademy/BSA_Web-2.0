@@ -1,3 +1,4 @@
+import Image from "next/image";
 import Link from "next/link";
 
 const footerNav = [
@@ -93,12 +94,13 @@ export default function Footer() {
               aria-label="Blue Sands Academy — Home"
               className="inline-flex items-center gap-2.5 font-display font-bold text-base text-white mb-5"
             >
-              <span
-                className="w-8 h-8 rounded-[5px] flex items-center justify-center text-white text-sm font-extrabold shrink-0 bg-primary"
-                aria-hidden="true"
-              >
-                B
-              </span>
+              <Image
+                src="/logos/bsa-mark.png"
+                alt=""
+                width={37}
+                height={37}
+                className="w-9.25 h-9.25 shrink-0"
+              />
               Blue Sands Academy
             </Link>
 
